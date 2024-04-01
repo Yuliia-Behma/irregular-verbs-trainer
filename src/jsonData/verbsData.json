@@ -1,0 +1,1009 @@
+{
+    "hard": [
+  {
+    "base form": "be",
+    "past simple": "was/were",
+    "past participle": "been"
+  },
+  {
+    "base form": "have",
+    "past simple": "had",
+    "past participle": "had"
+  },
+  {
+    "base form": "do",
+    "past simple": "did",
+    "past participle": "done"
+  },
+  {
+    "base form": "see",
+    "past simple": "saw",
+    "past participle": "seen"
+  },
+  {
+    "base form": "get",
+    "past simple": "got",
+    "past participle": "got"
+  },
+  {
+    "base form": "find",
+    "past simple": "found",
+    "past participle": "found"
+  },
+  {
+    "base form": "go",
+    "past simple": "went",
+    "past participle": "gone"
+  },
+  {
+    "base form": "buy",
+    "past simple": "bought",
+    "past participle": "bought"
+  },
+  {
+    "base form": "make",
+    "past simple": "made",
+    "past participle": "made"
+  },
+  {
+    "base form": "read",
+    "past simple": "read",
+    "past participle": "read"
+  },
+  {
+    "base form": "set",
+    "past simple": "set",
+    "past participle": "set"
+  },
+  {
+    "base form": "know",
+    "past simple": "knew",
+    "past participle": "known"
+  },
+  {
+    "base form": "send",
+    "past simple": "sent",
+    "past participle": "sent"
+  },
+  {
+    "base form": "take",
+    "past simple": "took",
+    "past participle": "taken"
+  },
+  {
+    "base form": "show",
+    "past simple": "showed",
+    "past participle": "shown"
+  },
+  {
+    "base form": "think",
+    "past simple": "thought",
+    "past participle": "thought"
+  },
+  {
+    "base form": "learn",
+    "past simple": "learnt",
+    "past participle": "learnt"
+  },
+  {
+    "base form": "cost",
+    "past simple": "cost",
+    "past participle": "cost"
+  },
+  {
+    "base form": "say",
+    "past simple": "said",
+    "past participle": "said"
+  },
+  {
+    "base form": "come",
+    "past simple": "came",
+    "past participle": "come"
+  },
+  {
+    "base form": "let",
+    "past simple": "let",
+    "past participle": "let"
+  },
+  {
+    "base form": "give",
+    "past simple": "gave",
+    "past participle": "given"
+  },
+  {
+    "base form": "sell",
+    "past simple": "sold",
+    "past participle": "sold"
+  },
+  {
+    "base form": "pay",
+    "past simple": "paid",
+    "past participle": "paid"
+  },
+  {
+    "base form": "light",
+    "past simple": "lit",
+    "past participle": "lit"
+  },
+  {
+    "base form": "write",
+    "past simple": "wrote",
+    "past participle": "written"
+  },
+  {
+    "base form": "become",
+    "past simple": "became",
+    "past participle": "become"
+  },
+  {
+    "base form": "keep",
+    "past simple": "kept",
+    "past participle": "kept"
+  },
+  {
+    "base form": "run",
+    "past simple": "ran",
+    "past participle": "run"
+  },
+  {
+    "base form": "put",
+    "past simple": "put",
+    "past participle": "put"
+  },
+  {
+    "base form": "tell",
+    "past simple": "told",
+    "past participle": "told"
+  },
+  {
+    "base form": "drive",
+    "past simple": "drove",
+    "past participle": "driven"
+  },
+  {
+    "base form": "meet",
+    "past simple": "met",
+    "past participle": "met"
+  },
+  {
+    "base form": "feel",
+    "past simple": "felt",
+    "past participle": "felt"
+  },
+  {
+    "base form": "choose",
+    "past simple": "chose",
+    "past participle": "chosen"
+  },
+  {
+    "base form": "speed",
+    "past simple": "sped",
+    "past participle": "sped"
+  },
+  {
+    "base form": "mean",
+    "past simple": "meant",
+    "past participle": "meant"
+  },
+  {
+    "base form": "build",
+    "past simple": "built",
+    "past participle": "built"
+  },
+  {
+    "base form": "leave",
+    "past simple": "left",
+    "past participle": "left"
+  },
+  {
+    "base form": "bid",
+    "past simple": "bade",
+    "past participle": "bidden"
+  },
+  {
+    "base form": "lead",
+    "past simple": "led",
+    "past participle": "led"
+  },
+  {
+    "base form": "wed",
+    "past simple": "wed",
+    "past participle": "wed"
+  },
+  {
+    "base form": "fall",
+    "past simple": "fell",
+    "past participle": "fallen"
+  },
+  {
+    "base form": "win",
+    "past simple": "won",
+    "past participle": "won"
+  },
+  {
+    "base form": "spring",
+    "past simple": "sprang",
+    "past participle": "sprung"
+  },
+  {
+    "base form": "deal",
+    "past simple": "dealt",
+    "past participle": "dealt"
+  },
+  {
+    "base form": "hold",
+    "past simple": "held",
+    "past participle": "held"
+  },
+  {
+    "base form": "feed",
+    "past simple": "fed",
+    "past participle": "fed"
+  },
+  {
+    "base form": "understand",
+    "past simple": "understood",
+    "past participle": "understood"
+  },
+  {
+    "base form": "cut",
+    "past simple": "cut",
+    "past participle": "cut"
+  },
+  {
+    "base form": "bring",
+    "past simple": "brought",
+    "past participle": "brought"
+  },
+  {
+    "base form": "ring",
+    "past simple": "rang",
+    "past participle": "rung"
+  },
+  {
+    "base form": "hit",
+    "past simple": "hit",
+    "past participle": "hit"
+  },
+  {
+    "base form": "string",
+    "past simple": "strung",
+    "past participle": "strung"
+  },
+  {
+    "base form": "break",
+    "past simple": "broke",
+    "past participle": "broken"
+  },
+  {
+    "base form": "saw",
+    "past simple": "sawed",
+    "past participle": "sawn"
+  },
+  {
+    "base form": "hear",
+    "past simple": "heard",
+    "past participle": "heard"
+  },
+  {
+    "base form": "stand",
+    "past simple": "stood",
+    "past participle": "stood"
+  },
+  {
+    "base form": "begin",
+    "past simple": "began",
+    "past participle": "begun"
+  },
+  {
+    "base form": "wind",
+    "past simple": "wound",
+    "past participle": "wound"
+  },
+  {
+    "base form": "fit",
+    "past simple": "fit",
+    "past participle": "fit"
+  },
+  {
+    "base form": "dream",
+    "past simple": "dreamt",
+    "past participle": "dreamt"
+  },
+  {
+    "base form": "cast",
+    "past simple": "cast",
+    "past participle": "cast"
+  },
+  {
+    "base form": "bear",
+    "past simple": "bore",
+    "past participle": "borne"
+  },
+  {
+    "base form": "blow",
+    "past simple": "blew",
+    "past participle": "blown"
+  },
+  {
+    "base form": "speak",
+    "past simple": "spoke",
+    "past participle": "spoken"
+  },
+  {
+    "base form": "fight",
+    "past simple": "fought",
+    "past participle": "fought"
+  },
+  {
+    "base form": "wear",
+    "past simple": "wore",
+    "past participle": "worn"
+  },
+  {
+    "base form": "rise",
+    "past simple": "rose",
+    "past participle": "risen"
+  },
+  {
+    "base form": "sleep",
+    "past simple": "slept",
+    "past participle": "slept"
+  },
+  {
+    "base form": "drink",
+    "past simple": "drank",
+    "past participle": "drunk"
+  },
+  {
+    "base form": "eat",
+    "past simple": "ate",
+    "past participle": "eaten"
+  },
+  {
+    "base form": "fly",
+    "past simple": "flew",
+    "past participle": "flown"
+  },
+  {
+    "base form": "beat",
+    "past simple": "beat",
+    "past participle": "beaten"
+  },
+  {
+    "base form": "hide",
+    "past simple": "hid",
+    "past participle": "hidden"
+  },
+  {
+    "base form": "spend",
+    "past simple": "spent",
+    "past participle": "spent"
+  },
+  {
+    "base form": "grow",
+    "past simple": "grew",
+    "past participle": "grown"
+  },
+  {
+    "base form": "ride",
+    "past simple": "rode",
+    "past participle": "ridden"
+  },
+  {
+    "base form": "forget",
+    "past simple": "forgot",
+    "past participle": "forgotten"
+  },
+  {
+    "base form": "spread",
+    "past simple": "spread",
+    "past participle": "spread"
+  },
+  {
+    "base form": "lose",
+    "past simple": "lost",
+    "past participle": "lost"
+  },
+  {
+    "base form": "seek",
+    "past simple": "sought",
+    "past participle": "sought"
+  },
+  {
+    "base form": "wet",
+    "past simple": "wet",
+    "past participle": "wet"
+  },
+  {
+    "base form": "draw",
+    "past simple": "drew",
+    "past participle": "drawn"
+  },
+  {
+    "base form": "stick",
+    "past simple": "stick",
+    "past participle": "stuck"
+  },
+  {
+    "base form": "slide",
+    "past simple": "slid",
+    "past participle": "slid"
+  },
+  {
+    "base form": "catch",
+    "past simple": "caught",
+    "past participle": "caught"
+  },
+  {
+    "base form": "split",
+    "past simple": "split",
+    "past participle": "split"
+  },
+  {
+    "base form": "sit",
+    "past simple": "sat",
+    "past participle": "sat"
+  },
+  {
+    "base form": "teach",
+    "past simple": "taught",
+    "past participle": "taught"
+  },
+  {
+    "base form": "strip",
+    "past simple": "stripped",
+    "past participle": "stripped"
+  },
+  {
+    "base form": "strike",
+    "past simple": "struck",
+    "past participle": "struck"
+  },
+  {
+    "base form": "shoe",
+    "past simple": "shod",
+    "past participle": "shod"
+  },
+  {
+    "base form": "lay",
+    "past simple": "laid",
+    "past participle": "laid"
+  },
+  {
+    "base form": "prove",
+    "past simple": "proved",
+    "past participle": "proven"
+  },
+  {
+    "base form": "bet",
+    "past simple": "bet",
+    "past participle": "bet"
+  },
+  {
+    "base form": "throw",
+    "past simple": "threw",
+    "past participle": "thrown"
+  },
+  {
+    "base form": "wake",
+    "past simple": "woke",
+    "past participle": "woken"
+  },
+  {
+    "base form": "burn",
+    "past simple": "burnt",
+    "past participle": "burnt"
+  },
+  {
+    "base form": "lie",
+    "past simple": "lay",
+    "past participle": "lain"
+  },
+  {
+    "base form": "lie",
+    "past simple": "lied",
+    "past participle": "lied"
+  },
+  {
+    "base form": "hurt",
+    "past simple": "hurt",
+    "past participle": "hurt"
+  },
+  {
+    "base form": "swing",
+    "past simple": "swung",
+    "past participle": "swung"
+  },
+  {
+    "base form": "shoot",
+    "past simple": "shot",
+    "past participle": "shot"
+  },
+  {
+    "base form": "spin",
+    "past simple": "span",
+    "past participle": "spun"
+  },
+  {
+    "base form": "shut",
+    "past simple": "shut",
+    "past participle": "shut"
+  },
+  {
+    "base form": "sing",
+    "past simple": "sang",
+    "past participle": "sung"
+  },
+  {
+    "base form": "hang",
+    "past simple": "hung",
+    "past participle": "hung"
+  },
+  {
+    "base form": "mistake",
+    "past simple": "mistook",
+    "past participle": "mistaken"
+  },
+  {
+    "base form": "quit",
+    "past simple": "quit",
+    "past participle": "quit"
+  },
+  {
+    "base form": "bend",
+    "past simple": "bent",
+    "past participle": "bent"
+  },
+  {
+    "base form": "swim",
+    "past simple": "swam",
+    "past participle": "swum"
+  },
+  {
+    "base form": "spell",
+    "past simple": "spelt",
+    "past participle": "spelt"
+  },
+  {
+    "base form": "arise",
+    "past simple": "arose",
+    "past participle": "arisen"
+  },
+  {
+    "base form": "dive",
+    "past simple": "dived",
+    "past participle": "dived"
+  },
+  {
+    "base form": "sink",
+    "past simple": "sank",
+    "past participle": "sunk"
+  },
+  {
+    "base form": "rid",
+    "past simple": "rid",
+    "past participle": "rid"
+  },
+  {
+    "base form": "breed",
+    "past simple": "bred",
+    "past participle": "bred"
+  },
+  {
+    "base form": "dig",
+    "past simple": "dug",
+    "past participle": "dug"
+  },
+  {
+    "base form": "shake",
+    "past simple": "shook",
+    "past participle": "shaken"
+  },
+  {
+    "base form": "shed",
+    "past simple": "shed",
+    "past participle": "shed"
+  },
+  {
+    "base form": "bind",
+    "past simple": "bind",
+    "past participle": "bound"
+  },
+  {
+    "base form": "smell",
+    "past simple": "smelt",
+    "past participle": "smelt"
+  },
+  {
+    "base form": "lean",
+    "past simple": "leant",
+    "past participle": "leant"
+  },
+  {
+    "base form": "steal",
+    "past simple": "stole",
+    "past participle": "stolen"
+  },
+  {
+    "base form": "bite",
+    "past simple": "bit",
+    "past participle": "bitten"
+  },
+  {
+    "base form": "shine",
+    "past simple": "shone",
+    "past participle": "shone"
+  },
+  {
+    "base form": "zinc",
+    "past simple": "zincked",
+    "past participle": "zincked"
+  },
+  {
+    "base form": "undertake",
+    "past simple": "undertook",
+    "past participle": "undertaken"
+  },
+  {
+    "base form": "tear",
+    "past simple": "tore",
+    "past participle": "torn"
+  },
+  {
+    "base form": "upset",
+    "past simple": "upset",
+    "past participle": "upset"
+  },
+  {
+    "base form": "freeze",
+    "past simple": "froze",
+    "past participle": "frozen"
+  },
+  {
+    "base form": "burst",
+    "past simple": "burst",
+    "past participle": "burst"
+  },
+  {
+    "base form": "knit",
+    "past simple": "knit",
+    "past participle": "knit"
+  },
+  {
+    "base form": "leap",
+    "past simple": "leapt",
+    "past participle": "leapt"
+  },
+  {
+    "base form": "withdraw",
+    "past simple": "withdrew",
+    "past participle": "withdrawn"
+  },
+  {
+    "base form": "sweat",
+    "past simple": "sweat",
+    "past participle": "sweat"
+  },
+  {
+    "base form": "bust",
+    "past simple": "bust",
+    "past participle": "bust"
+  },
+  {
+    "base form": "strive",
+    "past simple": "strove",
+    "past participle": "striven"
+  },
+  {
+    "base form": "spill",
+    "past simple": "spilt",
+    "past participle": "spilt"
+  },
+  {
+    "base form": "abide",
+    "past simple": "abided",
+    "past participle": "abided"
+  },
+  {
+    "base form": "sweep",
+    "past simple": "swept",
+    "past participle": "swept"
+  },
+  {
+    "base form": "thrust",
+    "past simple": "thrust",
+    "past participle": "thrust"
+  },
+  {
+    "base form": "forgive",
+    "past simple": "forgave",
+    "past participle": "forgiven"
+  },
+  {
+    "base form": "shrink",
+    "past simple": "shrank",
+    "past participle": "shrunk"
+  },
+  {
+    "base form": "awake",
+    "past simple": "awoke",
+    "past participle": "awoken"
+  },
+  {
+    "base form": "melt",
+    "past simple": "melted",
+    "past participle": "molten"
+  },
+  {
+    "base form": "swear",
+    "past simple": "swore",
+    "past participle": "sworn"
+  },
+  {
+    "base form": "lend",
+    "past simple": "lent",
+    "past participle": "lent"
+  },
+  {
+    "base form": "shear",
+    "past simple": "shore",
+    "past participle": "shorn"
+  },
+  {
+    "base form": "behold",
+    "past simple": "beheld",
+    "past participle": "beheld"
+  },
+  {
+    "base form": "sting",
+    "past simple": "stung",
+    "past participle": "stung"
+  },
+  {
+    "base form": "undergo",
+    "past simple": "underwent",
+    "past participle": "undergone"
+  },
+  {
+    "base form": "shave",
+    "past simple": "shaved",
+    "past participle": "shaven"
+  },
+  {
+    "base form": "grind",
+    "past simple": "ground",
+    "past participle": "ground"
+  },
+  {
+    "base form": "sneak",
+    "past simple": "snuck",
+    "past participle": "snuck"
+  },
+  {
+    "base form": "swell",
+    "past simple": "swelled",
+    "past participle": "swollen"
+  },
+  {
+    "base form": "spit",
+    "past simple": "spat",
+    "past participle": "spat"
+  },
+  {
+    "base form": "dwell",
+    "past simple": "dwelt",
+    "past participle": "dwelt"
+  },
+  {
+    "base form": "bleed",
+    "past simple": "bled",
+    "past participle": "bled"
+  },
+  {
+    "base form": "weave",
+    "past simple": "wove",
+    "past participle": "woven"
+  },
+  {
+    "base form": "thrive",
+    "past simple": "throve",
+    "past participle": "thriven"
+  },
+  {
+    "base form": "creep",
+    "past simple": "crept",
+    "past participle": "crept"
+  },
+  {
+    "base form": "sew",
+    "past simple": "sewed",
+    "past participle": "sewn"
+  },
+  {
+    "base form": "withstand",
+    "past simple": "withstood",
+    "past participle": "withstood"
+  },
+  {
+    "base form": "flee",
+    "past simple": "fled",
+    "past participle": "fled"
+  },
+  {
+    "base form": "sling",
+    "past simple": "slung",
+    "past participle": "slung"
+  },
+  {
+    "base form": "tread",
+    "past simple": "trod",
+    "past participle": "trodden"
+  },
+  {
+    "base form": "preset",
+    "past simple": "preset",
+    "past participle": "preset"
+  },
+  {
+    "base form": "stride",
+    "past simple": "strode",
+    "past participle": "stridden"
+  },
+  {
+    "base form": "slit",
+    "past simple": "slit",
+    "past participle": "slit"
+  },
+  {
+    "base form": "spoil",
+    "past simple": "spoilt",
+    "past participle": "spoilt"
+  },
+  {
+    "base form": "sow",
+    "past simple": "sowed",
+    "past participle": "sown"
+  },
+  {
+    "base form": "withhold",
+    "past simple": "withheld",
+    "past participle": "withheld"
+  },
+  {
+    "base form": "forbid",
+    "past simple": "forbade",
+    "past participle": "forbidden"
+  },
+  {
+    "base form": "weep",
+    "past simple": "wept",
+    "past participle": "wept"
+  },
+  {
+    "base form": "inlay",
+    "past simple": "inlaid",
+    "past participle": "inlaid"
+  },
+  {
+    "base form": "cling",
+    "past simple": "clung",
+    "past participle": "clung"
+  },
+  {
+    "base form": "stink",
+    "past simple": "stank",
+    "past participle": "stunk"
+  },
+  {
+    "base form": "slay",
+    "past simple": "slew",
+    "past participle": "slain"
+  },
+  {
+    "base form": "fling",
+    "past simple": "flung",
+    "past participle": "flung"
+  },
+  {
+    "base form": "mislead",
+    "past simple": "misled",
+    "past participle": "tomisled"
+  },
+  {
+    "base form": "foresee",
+    "past simple": "foresaw",
+    "past participle": "foreseen"
+  },
+  {
+    "base form": "mow",
+    "past simple": "mowed",
+    "past participle": "mown"
+  },
+  {
+    "base form": "overtake",
+    "past simple": "overtook",
+    "past participle": "overtaken"
+  },
+  {
+    "base form": "sunburn",
+    "past simple": "sunburnt",
+    "past participle": "sunburnt"
+  },
+  {
+    "base form": "sublet",
+    "past simple": "sublet",
+    "past participle": "sublet"
+  },
+  {
+    "base form": "kneel",
+    "past simple": "knelt",
+    "past participle": "knelt"
+  },
+  {
+    "base form": "rive",
+    "past simple": "rived",
+    "past participle": "riven"
+  },
+  {
+    "base form": "forsake",
+    "past simple": "forsook",
+    "past participle": "forsaken"
+  },
+  {
+    "base form": "misunderstand",
+    "past simple": "misunderstood",
+    "past participle": "misunderstood"
+  },
+  {
+    "base form": "clothe",
+    "past simple": "clad",
+    "past participle": "clad"
+  },
+  {
+    "base form": "vex",
+    "past simple": "vexed",
+    "past participle": "vexed"
+  },
+  {
+    "base form": "frostbite",
+    "past simple": "frostbit",
+    "past participle": "frostbitten"
+  },
+  {
+    "base form": "alight",
+    "past simple": "alit",
+    "past participle": "alighted"
+  },
+  {
+    "base form": "slink",
+    "past simple": "slunk",
+    "past participle": "slunk"
+  },
+  {
+    "base form": "wring",
+    "past simple": "wrung",
+    "past participle": "wrung"
+  },
+  {
+    "base form": "wend",
+    "past simple": "went",
+    "past participle": "went"
+  },
+  {
+    "base form": "overhear",
+    "past simple": "overheard",
+    "past participle": "overheard"
+  },
+  {
+    "base form": "overdraw",
+    "past simple": "overdrew",
+    "past participle": "overdrawn"
+  },
+  {
+    "base form": "handwrite",
+    "past simple": "handwrote",
+    "past participle": "handwritten"
+  }
+]
+}
