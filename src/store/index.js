@@ -1,20 +1,27 @@
 import { defineStore } from 'pinia';
-import * as fs from 'fs';
+import json from '../jsonData/verbsData.json'
 
 export const useVerbsStore = defineStore({
     id: 'verb',
     state: () => ({
         currentVerbs: [],
-        loading: true,
     }),
     actions: {
         getCurrentGameVerbsList(level) {
-            const wordsData = JSON.parse(fs.readFileSync('../jsonData/verbsData.json'));
-            const currentLevelArr = wordsData[`${level}`];
-            const sortedArr = currentLevelArr.sort(Math.random - 0.5);
-            console.log(sortedArr);
-            this.currentVerbs = sortedArr.slise(0, 20);
-            this.loading = false;
+            const wordsData = json;
+            console.log(level.value)
+            const currentLevelArr = wordsData[`${level.value}`];
+            console.log(currentLevelArr)
+
+            const sortedArr = currentLevelArr
+                .map(value => ({ value, sort: Math.random() }))
+                .sort((a, b) => a.sort - b.sort)
+                .map(({ value }) => value)
+
+            console.log(sortedArr)
+            sortedArr.length = 20;
+            this.currentVerbs.push(...sortedArr)
+            console.log(this.currentVerbs)
         }
     }
 })
