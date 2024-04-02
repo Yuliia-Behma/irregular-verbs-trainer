@@ -1,5 +1,333 @@
 {
-    "hard": [
+  "easy": [
+  {
+    "base form": "go",
+    "past simple": "went",
+    "past participle": "gone"
+  },
+  {
+    "base form": "do",
+    "past simple": "did",
+    "past participle": "done"
+  },
+  {
+    "base form": "eat",
+    "past simple": "ate",
+    "past participle": "eaten"
+  },
+  {
+    "base form": "become",
+    "past simple": "became",
+    "past participle": "become"
+  },
+  {
+    "base form": "begin",
+    "past simple": "began",
+    "past participle": "begun"
+  },
+  {
+    "base form": "break",
+    "past simple": "broke",
+    "past participle": "broken"
+  },
+  {
+    "base form": "bring",
+    "past simple": "brought",
+    "past participle": "brought"
+  },
+  {
+    "base form": "build",
+    "past simple": "built",
+    "past participle": "built"
+  },
+  {
+    "base form": "buy",
+    "past simple": "bought",
+    "past participle": "bought"
+  },
+  {
+    "base form": "catch",
+    "past simple": "caught",
+    "past participle": "caught"
+  },
+  {
+    "base form": "choose",
+    "past simple": "chose",
+    "past participle": "chosen"
+  },
+  {
+    "base form": "come",
+    "past simple": "came",
+    "past participle": "come"
+  },
+  {
+    "base form": "cost",
+    "past simple": "cost",
+    "past participle": "cost"
+  },
+  {
+    "base form": "cut",
+    "past simple": "cut",
+    "past participle": "cut"
+  },
+  {
+    "base form": "drink",
+    "past simple": "drank",
+    "past participle": "drunk"
+  },
+  {
+    "base form": "drive",
+    "past simple": "drove",
+    "past participle": "driven"
+  },
+  {
+    "base form": "fall",
+    "past simple": "fell",
+    "past participle": "fallen"
+  },
+  {
+    "base form": "fall",
+    "past simple": "fell",
+    "past participle": "fallen"
+  },
+  {
+    "base form": "feel",
+    "past simple": "felt",
+    "past participle": "felt"
+  },
+  {
+    "base form": "find",
+    "past simple": "found",
+    "past participle": "found"
+  },
+  {
+    "base form": "fly",
+    "past simple": "flew",
+    "past participle": "flown"
+  },
+  {
+    "base form": "forget",
+    "past simple": "forgot",
+    "past participle": "forgotten"
+  },
+  {
+    "base form": "get",
+    "past simple": "got",
+    "past participle": "got"
+  },
+  {
+    "base form": "give",
+    "past simple": "gave",
+    "past participle": "given"
+  },
+  {
+    "base form": "grow",
+    "past simple": "grew",
+    "past participle": "grown"
+  },
+  {
+    "base form": "have",
+    "past simple": "had",
+    "past participle": "had"
+  },
+  {
+    "base form": "hear",
+    "past simple": "heard",
+    "past participle": "heard"
+  },
+  {
+    "base form": "hit",
+    "past simple": "hit",
+    "past participle": "hit"
+  },
+  {
+    "base form": "keep",
+    "past simple": "kept",
+    "past participle": "kept"
+  },
+  {
+    "base form": "know",
+    "past simple": "knew",
+    "past participle": "known"
+  },
+  {
+    "base form": "learn",
+    "past simple": "learnt",
+    "past participle": "learnt"
+  },
+  {
+    "base form": "leave",
+    "past simple": "left",
+    "past participle": "left"
+  },
+  {
+    "base form": "lend",
+    "past simple": "lent",
+    "past participle": "lent"
+  },
+  {
+    "base form": "let",
+    "past simple": "let",
+    "past participle": "let"
+  },
+  {
+    "base form": "lose",
+    "past simple": "lost",
+    "past participle": "lost"
+  },
+  {
+    "base form": "make",
+    "past simple": "made",
+    "past participle": "made"
+  },
+  {
+    "base form": "meet",
+    "past simple": "met",
+    "past participle": "met"
+  },
+  {
+    "base form": "pay",
+    "past simple": "paid",
+    "past participle": "paid"
+  },
+  {
+    "base form": "put",
+    "past simple": "put",
+    "past participle": "put"
+  },
+  {
+    "base form": "read",
+    "past simple": "read",
+    "past participle": "read"
+  },
+  {
+    "base form": "ring",
+    "past simple": "rang",
+    "past participle": "rung"
+  },
+  {
+    "base form": "run",
+    "past simple": "ran",
+    "past participle": "run"
+  },
+  {
+    "base form": "say",
+    "past simple": "said",
+    "past participle": "said"
+  },
+  {
+    "base form": "see",
+    "past simple": "saw",
+    "past participle": "seen"
+  },
+  {
+    "base form": "sell",
+    "past simple": "sold",
+    "past participle": "sold"
+  },
+  {
+    "base form": "send",
+    "past": "sent",
+    "past participle": "sent"
+  },
+  {
+    "base form": "shut",
+    "past simple": "shut",
+    "past participle": "shut"
+  },
+  {
+    "base form": "sing",
+    "past simple": "sang",
+    "past participle": "sung"
+  },
+  {
+    "base form": "sit",
+    "past simple": "sat",
+    "past participle": "sat"
+  },
+  {
+    "base form": "sleep",
+    "past simple": "slept",
+    "past participle": "slept"
+  },
+  {
+    "prebase formsent": "speak",
+    "past simple": "spoke",
+    "past participle": "spoken"
+  },
+  {
+    "base form": "spend",
+    "past simple": "spent",
+    "past participle": "spent"
+  },
+  {
+    "base form": "stand",
+    "past simple": "stood",
+    "past participle": "stood"
+  },
+  {
+    "base form": "steal",
+    "past simple": "stole",
+    "past participle": "stolen"
+  },
+  {
+    "base form": "swim",
+    "past simple": "swam",
+    "past participle": "swum"
+  },
+  {
+    "base form": "take",
+    "past simple": "took",
+    "partipast participleciple": "taken"
+  },
+  {
+    "base form": "teach",
+    "past simple": "taught",
+    "past participle": "taught"
+  },
+  {
+    "base form": "tell",
+    "past simple": "told",
+    "past participle": "told"
+  },
+  {
+    "base form": "think",
+    "past simple": "thought",
+    "past participle": "thought"
+  },
+  {
+    "base form": "throw",
+    "past simple": "threw",
+    "past participle": "thrown"
+  },
+  {
+    "base form": "understand",
+    "past simple": "understood",
+    "past participle": "understood"
+  },
+  {
+    "base form": "wake",
+    "past simple": "woke",
+    "past participle": "woken"
+  },
+  {
+    "base form": "wear",
+    "past simple": "wore",
+    "past participle": "worn"
+  },
+  {
+    "base form": "win",
+    "past simple": "won",
+    "participast participleple": "won"
+  },
+  {
+    "base form": "write",
+    "past simple": "wrote",
+    "past participle": "written"
+  }
+],  
+  
+  "hard": [
   {
     "base form": "be",
     "past simple": "was/were",
