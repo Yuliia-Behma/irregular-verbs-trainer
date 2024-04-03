@@ -1,5 +1,4 @@
 <template>
-  <div class="hello">Hello from Start!</div>
   <div v-if="!allow" class="choose-level-container">
     <fieldset @keyup.enter="startGameBtn">
       <legend>Choose level</legend>

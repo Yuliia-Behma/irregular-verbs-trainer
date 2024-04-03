@@ -1,19 +1,18 @@
 <template>
   <nav>
-
+    <RouterLink to="/">Start training</RouterLink> | 
+    <RouterLink to="/verbs-list">Verbs List</RouterLink>
   </nav>
-  I'm App component
-<StartTraining></StartTraining>
+ 
+  <RouterView></RouterView>
 </template>
 
 <script>
-import StartTraining from "./components/StartTraining.vue"
+
 
 export default {
   name: 'App',
-  components: {
-    StartTraining
-  }
+  
 }
 </script>
 
