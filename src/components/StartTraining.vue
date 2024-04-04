@@ -102,6 +102,14 @@ export default defineComponent({
         console.log(isAnswer.value)
         setTimeout(() => {
           isAnswer.value = null;
+          if (index.value > verbsStore.value.currentVerbs.length) {
+        endGame();
+      } else if (index.value < verbsStore.value.currentVerbs.length) {
+        index.value++;
+        answer.value = "";
+        currentWord.value = verbsStore.value.currentVerbs[index.value];
+        identifyForm();
+      }
         }, 1000)
         
       } else {
@@ -117,18 +125,19 @@ export default defineComponent({
         console.log(errorObj)
         setTimeout(() => {
           isAnswer.value = null;
-        }, 2000)
-      }
-      // setTimeout()
-      
-      if (index.value > verbsStore.value.currentVerbs.length && isAnswer.value === null) {
+          if (index.value > verbsStore.value.currentVerbs.length) {
         endGame();
-      } else if (index.value < verbsStore.value.currentVerbs.length && isAnswer.value === null) {
+      } else if (index.value < verbsStore.value.currentVerbs.length) {
         index.value++;
         answer.value = "";
         currentWord.value = verbsStore.value.currentVerbs[index.value];
         identifyForm();
       }
+        }, 2000)
+      }
+      // setTimeout()
+      
+      
     }
 
     function endGame() {
