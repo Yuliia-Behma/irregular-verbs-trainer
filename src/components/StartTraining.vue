@@ -52,6 +52,7 @@
           {{ currentWord.value[currentFormForComparison] }}
         </div>
         <button @click="checkAnswer">Check</button><br />
+        <Result v-if="showResult" :errorsArr="errorsArr"></Result>
         <button @click="restartGame">Restart</button>
       </div>
     </div>
@@ -60,11 +61,12 @@
 
 <script>
 import { defineComponent, ref, reactive } from "vue";
-
 import { useVerbsStore } from "@/store";
+import Result from "./Result.vue";
 
 export default defineComponent({
   name: "StartTraining",
+  components: { Result },
 
   setup() {
     const verbsStore = ref(useVerbsStore());
@@ -75,7 +77,8 @@ export default defineComponent({
     const answer = ref("");
     const isAnswer = ref(null);
     const currentFormForComparison = ref("");
-    let errorsArr = [];
+    let errorsArr = ref([]);
+    let showResult = ref(false);
 
     function randomNumber(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -104,8 +107,9 @@ export default defineComponent({
         console.log(isAnswer.value);
         setTimeout(() => {
           isAnswer.value = null;
-          if (index.value > verbsStore.value.currentVerbs.length) {
+          if (index.value > verbsStore.value.currentVerbs.length - 1) {
             endGame();
+            return;
           } else if (index.value < verbsStore.value.currentVerbs.length) {
             index.value++;
             answer.value = "";
@@ -122,25 +126,27 @@ export default defineComponent({
           "my answer": answer.value,
           "correct answer": currentWord.value[currentFormForComparison.value],
         };
-        errorsArr.push(errorObj);
+        errorsArr.value.push(errorObj);
         console.log(errorObj);
+        console.log(verbsStore.value.currentVerbs.length);
         setTimeout(() => {
           isAnswer.value = null;
-          if (index.value > verbsStore.value.currentVerbs.length) {
+          if (index.value == verbsStore.value.currentVerbs.length - 1) {
             endGame();
+            return;
           } else if (index.value < verbsStore.value.currentVerbs.length) {
             index.value++;
             answer.value = "";
             currentWord.value = verbsStore.value.currentVerbs[index.value];
             identifyForm();
           }
-        }, 2000);
+        }, 1000);
       }
-    
     }
 
     function endGame() {
-      // show results
+      console.log("end game work");
+      showResult.value = true;
       // кнопка чек дісейбл
     }
 
@@ -149,7 +155,8 @@ export default defineComponent({
       level.value = "";
       index.value = 0;
       answer.value = "";
-      errorsArr = [];
+      errorsArr.value = [];
+      showResult.value = false;
     }
 
     return {
@@ -165,6 +172,8 @@ export default defineComponent({
       identifyForm,
       isAnswer,
       currentFormForComparison,
+      showResult,
+      errorsArr,
     };
   },
 });

@@ -50,4 +50,8 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+th, td{
+  border: 1px solid black;
+}
+</style>
