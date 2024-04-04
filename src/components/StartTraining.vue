@@ -47,7 +47,10 @@
       <input type="text" v-model.trim="answer" />
       <div class="check-container">
         <div v-if="isAnswer" class="answerIsTrue">Greate!</div>
-        <div v-if="isAnswer === false" class="answerIsFalse">No... The right answer is {{ currentWord.value[currentFormForComparison] }}</div>
+        <div v-if="isAnswer === false" class="answerIsFalse">
+          No... The right answer is
+          {{ currentWord.value[currentFormForComparison] }}
+        </div>
         <button @click="checkAnswer">Check</button><br />
         <button @click="restartGame">Restart</button>
       </div>
@@ -75,16 +78,15 @@ export default defineComponent({
     let errorsArr = [];
 
     function randomNumber(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+      return Math.floor(Math.random() * (max - min + 1)) + min;
     }
-      
+
     function identifyForm() {
       const num = randomNumber(1, 2);
       if (num == 1) {
-        return currentFormForComparison.value = "past simple"
-      }
-      else if (num == 2) {
-        return currentFormForComparison.value = "past participle"
+        return (currentFormForComparison.value = "past simple");
+      } else if (num == 2) {
+        return (currentFormForComparison.value = "past participle");
       }
     }
 
@@ -99,51 +101,47 @@ export default defineComponent({
       // перевірка
       if (answer.value == currentWord.value[currentFormForComparison.value]) {
         isAnswer.value = true;
-        console.log(isAnswer.value)
+        console.log(isAnswer.value);
         setTimeout(() => {
           isAnswer.value = null;
           if (index.value > verbsStore.value.currentVerbs.length) {
-        endGame();
-      } else if (index.value < verbsStore.value.currentVerbs.length) {
-        index.value++;
-        answer.value = "";
-        currentWord.value = verbsStore.value.currentVerbs[index.value];
-        identifyForm();
-      }
-        }, 1000)
-        
+            endGame();
+          } else if (index.value < verbsStore.value.currentVerbs.length) {
+            index.value++;
+            answer.value = "";
+            currentWord.value = verbsStore.value.currentVerbs[index.value];
+            identifyForm();
+          }
+        }, 1000);
       } else {
         isAnswer.value = false;
-        console.log(isAnswer.value)
+        console.log(isAnswer.value);
         const errorObj = {
           "base form": currentWord.value["base form"],
           "comparison form": currentFormForComparison.value,
           "my answer": answer.value,
-          "correct answer": currentWord.value[currentFormForComparison.value]
-        }
-        errorsArr.push(errorObj)
-        console.log(errorObj)
+          "correct answer": currentWord.value[currentFormForComparison.value],
+        };
+        errorsArr.push(errorObj);
+        console.log(errorObj);
         setTimeout(() => {
           isAnswer.value = null;
           if (index.value > verbsStore.value.currentVerbs.length) {
-        endGame();
-      } else if (index.value < verbsStore.value.currentVerbs.length) {
-        index.value++;
-        answer.value = "";
-        currentWord.value = verbsStore.value.currentVerbs[index.value];
-        identifyForm();
+            endGame();
+          } else if (index.value < verbsStore.value.currentVerbs.length) {
+            index.value++;
+            answer.value = "";
+            currentWord.value = verbsStore.value.currentVerbs[index.value];
+            identifyForm();
+          }
+        }, 2000);
       }
-        }, 2000)
-      }
-      // setTimeout()
-      
-      
+    
     }
 
     function endGame() {
       // show results
       // кнопка чек дісейбл
-
     }
 
     function restartGame() {
@@ -151,8 +149,7 @@ export default defineComponent({
       level.value = "";
       index.value = 0;
       answer.value = "";
-      errorsArr = []
-
+      errorsArr = [];
     }
 
     return {
@@ -167,7 +164,7 @@ export default defineComponent({
       restartGame,
       identifyForm,
       isAnswer,
-      currentFormForComparison
+      currentFormForComparison,
     };
   },
 });
