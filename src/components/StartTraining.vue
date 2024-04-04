@@ -64,7 +64,7 @@ export default defineComponent({
   name: "StartTraining",
 
   setup() {
-    const verbsStore = useVerbsStore();
+    const verbsStore = ref(useVerbsStore());
     const level = ref("");
     const allow = ref(false);
     const index = ref(0);
@@ -72,7 +72,7 @@ export default defineComponent({
     const answer = ref("");
     const isAnswer = ref(null);
     const currentFormForComparison = ref("");
-    const errorsArr = [];
+    let errorsArr = [];
 
     function randomNumber(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -90,8 +90,8 @@ export default defineComponent({
 
     function startGameBtn() {
       allow.value = true;
-      verbsStore.getCurrentGameVerbsList(level);
-      currentWord.value = verbsStore.currentVerbs[index.value];
+      verbsStore.value.getCurrentGameVerbsList(level);
+      currentWord.value = verbsStore.value.currentVerbs[index.value];
       identifyForm();
     }
 
@@ -121,12 +121,12 @@ export default defineComponent({
       }
       // setTimeout()
       
-      if (index.value > verbsStore.currentVerbs.length && isAnswer.value === null) {
+      if (index.value > verbsStore.value.currentVerbs.length && isAnswer.value === null) {
         endGame();
-      } else if (index.value < verbsStore.currentVerbs.length && isAnswer.value === null) {
+      } else if (index.value < verbsStore.value.currentVerbs.length && isAnswer.value === null) {
         index.value++;
         answer.value = "";
-        currentWord.value = verbsStore.currentVerbs[index.value];
+        currentWord.value = verbsStore.value.currentVerbs[index.value];
         identifyForm();
       }
     }
@@ -141,6 +141,8 @@ export default defineComponent({
       allow.value = false;
       level.value = "";
       index.value = 0;
+      answer.value = "";
+      errorsArr = []
 
     }
 

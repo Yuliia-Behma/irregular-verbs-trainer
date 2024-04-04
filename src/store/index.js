@@ -20,7 +20,7 @@ export const useVerbsStore = defineStore({
 
             console.log(sortedArr)
             sortedArr.length = 20;
-            this.currentVerbs.push(...sortedArr)
+            this.currentVerbs = sortedArr
             console.log(this.currentVerbs)
         }
     }
