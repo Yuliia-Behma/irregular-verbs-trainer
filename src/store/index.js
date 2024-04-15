@@ -9,8 +9,8 @@ export const useVerbsStore = defineStore({
     actions: {
         getCurrentGameVerbsList(level) {
             const wordsData = json;
-            console.log(level.value)
-            const currentLevelArr = wordsData[`${level.value}`];
+            console.log(level)
+            const currentLevelArr = wordsData[`${level}`];
             console.log(currentLevelArr)
 
             const sortedArr = currentLevelArr

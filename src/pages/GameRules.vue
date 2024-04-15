@@ -2,7 +2,7 @@
 import router from '@/router';
 
 function backToStart() {
-  router.replace('/choose-level')
+  router.replace('/')
 }
 </script>
 
