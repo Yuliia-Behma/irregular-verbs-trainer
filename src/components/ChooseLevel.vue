@@ -65,7 +65,7 @@ import { useVerbsStore } from "@/store";
 import Result from "./Result.vue";
 
 export default defineComponent({
-  name: "StartTraining",
+  name: "ChooseLevel",
   components: { Result },
 
   setup() {
