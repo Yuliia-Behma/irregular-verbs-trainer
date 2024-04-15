@@ -13,7 +13,7 @@ function passing() {
     <p>Learn irregular verbs with ease and fun. Let's make your learning enjoyable and productive together!</p>
     <button @click="passing">
       <span>Start</span>
-      <img src="#" alt="icon">
+      <!-- <img src="#" alt="icon"> -->
     </button>
     
   </div>

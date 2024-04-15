@@ -2,8 +2,8 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import Home from "@/pages/Home.vue";
 import VerbList from "@/pages/VerbList.vue";
-import Rules from "@/pages/Rules.vue";
 import ChooseLevel from "@/components/ChooseLevel.vue"
+import GameRules from "@/pages/GameRules.vue";
 
 const routes = [
         {
@@ -16,7 +16,7 @@ const routes = [
         },
         {
             path: '/rules',
-            component: Rules
+            component: GameRules
         },
          {
             path: '/verbs-list',

@@ -11,13 +11,16 @@
         <div class="icon"></div>
         <span class="link-name">Home</span>
       </RouterLink>
+
       <RouterLink to="/rules">
         <div class="icon"></div>
         <span class="link-name">Rules</span>
       </RouterLink>
+
       <RouterLink to="/verbs-list"
         ><div class="icon"></div>
-        <span class="link-name">Catalog</span></RouterLink
+        <span class="link-name">Catalog</span>
+      </RouterLink
       >
     </nav>
   </footer>
