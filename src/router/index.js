@@ -1,12 +1,17 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import StartTraining from "@/components/StartTraining.vue";
-import VerbList from "@/components/VerbList.vue";
+import Home from "@/pages/Home.vue";
+import VerbList from "@/pages/VerbList.vue";
+import Rules from "@/pages/Rules.vue";
 
 const routes = [
         {
             path: '/',
-            component: StartTraining
+            component: Home
+    },
+        {
+            path: '/rules',
+            component: Rules
         },
          {
             path: '/verbs-list',
