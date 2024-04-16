@@ -1,6 +1,10 @@
 <template>
   <div class="hello">
-    <button @click="sortList">sort (a-z)</button>
+    <div class="title">
+      <h2>Verb catalog</h2>
+      <button @click="sortList">sort (a-z)</button>
+    </div>
+    
     <table>
       <thead>
         <tr>
@@ -9,15 +13,20 @@
           <th>Past participle</th>
         </tr>
       </thead>
+      <!-- <div class="table-div"> -->
       <tbody>
-        <tr v-for="item in list" :key="item">
+        <div class="isolated-div">
+        <tr v-for="item in list" :key="item" class="table-row">
           <td>{{ item["base form"] }}</td>
           <td>{{ item["past simple"] }}</td>
           <td>{{ item["past participle"] }}</td>
         </tr>
+      </div>
       </tbody>
+    <!-- </div> -->
     </table>
   </div>
+  
 </template>
 
 <script>
@@ -51,7 +60,44 @@ export default {
 </script>
 
 <style scoped>
-th, td{
-  border: 1px solid black;
+
+.title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+table{
+  width: 100%;
+  position: relative;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+thead{
+  border-bottom: 2px solid black;
+}
+tbody{
+  width: 100%;
+  height: 75vh;
+  overflow: hidden;
+  overflow-y: scroll;
+  position: absolute;
+}
+.isolated-div{
+  width: 100%;
+  position: relative;
+}
+
+td{
+  width: 33vw;
+}
+th{
+  text-align: start;
+}
+
+.isolated-div>:nth-child(odd){
+  background-color: lightgreen;
+}
+
+
 </style>
