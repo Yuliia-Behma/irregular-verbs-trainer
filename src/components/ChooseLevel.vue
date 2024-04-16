@@ -72,11 +72,5 @@ export default defineComponent({
 </script>
 
 <style scoped>
-span {
-  color: rgb(6, 133, 91);
-  font-weight: 800;
-}
-button {
-  margin: 10px;
-}
+
 </style>
