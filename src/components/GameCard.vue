@@ -1,5 +1,11 @@
 <template>
   <div class="card-container" @keyup.enter="checkAnswer">
+    <div class="progress-bar-wraper">
+      <div class="percent-progress">{{ calculateProgress(index) }}</div>
+      <div class="progress-bar">
+        <div class="progress" :style="{ width: progress,}"></div>
+      </div>
+    </div>
     <p>
       What is the <span>{{ currentFormForComparison }}</span> form for the verb
       <span>"to {{ currentWord.value["base form"] }}"</span>?
@@ -8,16 +14,17 @@
     <input type="text" v-model.trim="answer" placeholder="Your answer" />
     <div class="check-container">
       <div v-if="isAnswer" class="answerIsTrue">Right answer, greate!</div>
+      
+      <div v-else-if="isAnswer === false" class="answerIsFalse">
+        Wrong<br />
+        The right answer is
+        <span> "{{ currentWord.value[currentFormForComparison] }}"</span>
+      </div>
       <div
         v-else-if="answer === ''"
         class="haveNoAnswer"
       >
         Wright the answer and push "Check"
-      </div>
-      <div v-else-if="isAnswer === false" class="answerIsFalse">
-        Wrong<br />
-        The right answer is
-        <span> "{{ currentWord.value[currentFormForComparison] }}"</span>
       </div>
       <button @click="checkAnswer">Check</button><br />
       <Result v-if="showResult" :errorsArr="errorsArr"></Result>
@@ -48,12 +55,21 @@ export default defineComponent({
     let showResult = ref(false);
     const currentLevel = ref(props.level);
 
+    const progress = ref("");
+
     onBeforeMount(() => {
       console.log(currentLevel.value);
       verbsStore.value.getCurrentGameVerbsList(currentLevel.value);
       currentWord.value = verbsStore.value.currentVerbs[index.value];
       identifyForm();
     });
+
+    function calculateProgress(index) {
+      let percent = (index + 1) / 0.2;
+      percent += "%";
+      progress.value = percent;
+      return percent;
+    }
 
     function randomNumber(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -136,6 +152,8 @@ export default defineComponent({
       showResult,
       restartGame,
       checkAnswer,
+      progress,
+      calculateProgress
     };
   },
 });
@@ -148,5 +166,20 @@ span {
 }
 button {
   margin: 10px;
+}
+.percent-progress{
+  text-align: end;
+}
+
+.progress-bar{
+  width: 100%;
+  height: 5px;
+  border: 1px solid black;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+.progress{
+  height: 3px;
+  background-color: rgb(1, 179, 120);
 }
 </style>
