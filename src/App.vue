@@ -58,7 +58,7 @@ footer nav{
   position: fixed;
   bottom: 0;
 }
-body{
+/* body{
   margin: 0;
-}
+} */
 </style>
