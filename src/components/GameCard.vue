@@ -45,7 +45,7 @@ export default defineComponent({
     level: String,
   },
   setup(props) {
-    const verbsStore = ref(useVerbsStore());
+    const verbsStore = useVerbsStore();
     const currentWord = reactive({});
     const index = ref(0);
     const answer = ref("");
@@ -59,8 +59,8 @@ export default defineComponent({
 
     onBeforeMount(() => {
       console.log(currentLevel.value);
-      verbsStore.value.getCurrentGameVerbsList(currentLevel.value);
-      currentWord.value = verbsStore.value.currentVerbs[index.value];
+      verbsStore.getCurrentGameVerbsList(currentLevel.value);
+      currentWord.value = verbsStore.currentVerbs[index.value];
       identifyForm();
     });
 
@@ -96,13 +96,13 @@ export default defineComponent({
         console.log(isAnswer.value);
         setTimeout(() => {
           isAnswer.value = null;
-          if (index.value == verbsStore.value.currentVerbs.length - 1) {
+          if (index.value == verbsStore.currentVerbs.length - 1) {
             endGame();
             return;
-          } else if (index.value < verbsStore.value.currentVerbs.length - 1) {
+          } else if (index.value < verbsStore.currentVerbs.length - 1) {
             index.value++;
             answer.value = "";
-            currentWord.value = verbsStore.value.currentVerbs[index.value];
+            currentWord.value = verbsStore.currentVerbs[index.value];
             identifyForm();
           }
         }, 1000);
@@ -117,16 +117,16 @@ export default defineComponent({
         };
         errorsArr.value.push(errorObj);
         console.log(errorObj);
-        console.log(verbsStore.value.currentVerbs.length);
+        console.log(verbsStore.currentVerbs.length);
         setTimeout(() => {
           isAnswer.value = null;
-          if (index.value == verbsStore.value.currentVerbs.length - 1) {
+          if (index.value == verbsStore.currentVerbs.length - 1) {
             endGame();
             return;
-          } else if (index.value < verbsStore.value.currentVerbs.length - 1) {
+          } else if (index.value < verbsStore.currentVerbs.length - 1) {
             index.value++;
             answer.value = "";
-            currentWord.value = verbsStore.value.currentVerbs[index.value];
+            currentWord.value = verbsStore.currentVerbs[index.value];
             identifyForm();
           }
         }, 1000);

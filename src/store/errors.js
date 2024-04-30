@@ -8,9 +8,6 @@ export const useErrorsStore = defineStore({
     actions: {
         addError(err) {
             this.errorsArray.push(err)
-        },
-        clearArr() {
-            this.errorsArray = []
         }
     }
 })
