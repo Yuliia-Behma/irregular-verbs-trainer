@@ -35,7 +35,7 @@
 
 <script>
 import { defineComponent, ref, reactive, onBeforeMount } from "vue";
-import { useVerbsStore } from "@/store";
+import { useVerbsStore } from "@/store/verbs";
 import Result from "./Result.vue";
 
 export default defineComponent({
