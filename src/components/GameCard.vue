@@ -27,7 +27,6 @@
         Wright the answer and push "Check"
       </div>
       <button @click="checkAnswer">Check</button><br />
-      <Result v-if="showResult" :errorsArr="errorsArr"></Result>
       <button @click="restartGame">Restart</button>
     </div>
   </div>
@@ -35,24 +34,24 @@
 
 <script>
 import { defineComponent, ref, reactive, onBeforeMount } from "vue";
+import router from "@/router";
 import { useVerbsStore } from "@/store/verbs";
-import Result from "./Result.vue";
+import { useErrorsStore } from "@/store/errors";
 
 export default defineComponent({
   name: "GameCard",
-  components: { Result },
   props: {
     level: String,
   },
   setup(props) {
     const verbsStore = useVerbsStore();
+    const errorsStore = useErrorsStore();
+
     const currentWord = reactive({});
     const index = ref(0);
     const answer = ref("");
     const isAnswer = ref(null);
     const currentFormForComparison = ref("");
-    let errorsArr = ref([]);
-    let showResult = ref(false);
     const currentLevel = ref(props.level);
 
     const progress = ref("");
@@ -86,7 +85,7 @@ export default defineComponent({
 
     function endGame() {
       console.log("end game work");
-      showResult.value = true;
+      router.replace('/results')
     }
 
     function checkAnswer() {
@@ -115,8 +114,8 @@ export default defineComponent({
           "my answer": answer.value,
           "correct answer": currentWord.value[currentFormForComparison.value],
         };
-        errorsArr.value.push(errorObj);
-        console.log(errorObj);
+        errorsStore.addError(errorObj); //змінити 
+        console.log(errorsStore.errorsArray);
         console.log(verbsStore.currentVerbs.length);
         setTimeout(() => {
           isAnswer.value = null;
@@ -137,8 +136,7 @@ export default defineComponent({
       this.$emit("restart");
       index.value = 0;
       answer.value = "";
-      errorsArr.value = [];
-      showResult.value = false;
+      errorsStore.$reset(); //змінити
     }
 
     return {
@@ -148,8 +146,6 @@ export default defineComponent({
       answer,
       isAnswer,
       currentFormForComparison,
-      errorsArr,
-      showResult,
       restartGame,
       checkAnswer,
       progress,

@@ -4,6 +4,7 @@ import Home from "@/pages/Home.vue";
 import VerbList from "@/pages/VerbList.vue";
 import ChooseLevel from "@/components/ChooseLevel.vue"
 import GameRules from "@/pages/GameRules.vue";
+import Result from "@/components/Result.vue";
 
 const routes = [
         {
@@ -18,9 +19,13 @@ const routes = [
             path: '/rules',
             component: GameRules
         },
-         {
+        {
             path: '/verbs-list',
             component: VerbList
+        },
+        {
+            path: '/results',
+            component: Result
         }
 ]
 

@@ -5,11 +5,11 @@
   <table>
     <thead>
       <tr>
-        <th v-for="(value, name) in errorsArr[0]" :key="value">{{ name }}</th>
+        <th v-for="(value, name) in errorsArray[0]" :key="value">{{ name }}</th>
       </tr>
     </thead>
     <tbody>
-      <tr v-for="error in errorsArr" :key="error">
+      <tr v-for="error in errorsArray" :key="error">
         <td v-for="value in error" :key="value">{{ value }}</td>
       </tr>
     </tbody>
@@ -17,18 +17,28 @@
 </template>
 
 <script>
-import {ref} from "vue"
+import { onMounted, ref } from "vue";
+import { useErrorsStore } from "@/store/errors";
 
 export default {
   name: 'Result',
-  props: {
-    errorsArr: Array
-  },
-  setup(props) {
-    const countOfMistakes = ref(props.errorsArr.length);
+  
+  setup() {
+    const countOfMistakes = ref(0);
+    const errorsArray = ref([]);
+
+    onMounted(() => {
+      const errorStore = useErrorsStore();
+      console.log(errorStore)
+      errorsArray.value = errorStore.errorsArray;
+      console.log(errorsArray.value)
+      countOfMistakes.value = errorsArray.value.length;
+    })
+    
 
     return {
-      countOfMistakes
+      countOfMistakes,
+      errorsArray
     }
   }
 }
