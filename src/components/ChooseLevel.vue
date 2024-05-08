@@ -37,7 +37,7 @@
       </div>
 
     <!-- <button @click="startGameBtn" :disabled="!level">Start</button> -->
-      <div class="absolute left-0 bottom-6 w-full px-6 pt-0 pb-16">
+      <div class="absolute left-0 bottom-6 w-full px-6 pt-0 pb-16" >
     <button
       type="button"
       @click="startGameBtn"
@@ -60,6 +60,7 @@
         />
       </svg>
     </button>
+    <p v-if="level" class="text-sm text-gray-500 dark:text-gray-400 text-center">Let's check your knowledge</p>
   </div>
   </div>
   
