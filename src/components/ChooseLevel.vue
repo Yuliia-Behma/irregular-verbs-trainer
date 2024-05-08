@@ -42,7 +42,8 @@
       type="button"
       @click="startGameBtn"
       :disabled="!level"
-      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-m px-5 py-3.5 text-center flex flex-row justify-center max-w-sm w-full dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mb-2"
+      class="text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-m px-5 py-3.5 text-center flex flex-row justify-center max-w-sm w-full dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mb-2"
+      :class="{ 'cursor-not-allowed': !level, 'bg-blue-500': !level, ' bg-blue-700': level, ' hover:bg-blue-800': level}"
     >
       <span class="mr-2">Start</span>
       <svg
