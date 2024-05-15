@@ -1,32 +1,36 @@
 <template>
-  <div class="card-container" @keyup.enter="checkAnswer">
-    <div class="progress-bar-wraper">
-      <div class="percent-progress">{{ calculateProgress(index) }}</div>
-      <div class="progress-bar">
-        <div class="progress" :style="{ width: progress,}"></div>
+  <div
+    class="card-container wraper px-6 flex flex-col justify-between w-full max-w-md my-0 mx-auto"
+    @keyup.enter="checkAnswer"
+  >
+    <div>
+      <div class="progress-bar-wraper">
+        <div class="percent-progress">{{ calculateProgress(index) }}</div>
+        <div class="progress-bar">
+          <div class="progress" :style="{ width: progress }"></div>
+        </div>
+      </div>
+      <p>
+        What is the <span>{{ currentFormForComparison }}</span> form for the
+        verb <span>"to {{ currentWord.value["base form"] }}"</span>?
+      </p>
+      <div class="counter-display">{{ index + 1 }} out of 20</div>
+      <input type="text" v-model.trim="answer" placeholder="Your answer" />
+      <div class="check-container">
+        <div v-if="isAnswer" class="answerIsTrue">Right answer, greate!</div>
+
+        <div v-else-if="isAnswer === false" class="answerIsFalse">
+          Wrong<br />
+          The right answer is
+          <span> "{{ currentWord.value[currentFormForComparison] }}"</span>
+        </div>
+        <div v-else-if="answer === ''" class="haveNoAnswer">
+          Wright the answer and push "Check"
+        </div>
       </div>
     </div>
-    <p>
-      What is the <span>{{ currentFormForComparison }}</span> form for the verb
-      <span>"to {{ currentWord.value["base form"] }}"</span>?
-    </p>
-    <div class="counter-display">{{ index + 1 }} out of 20</div>
-    <input type="text" v-model.trim="answer" placeholder="Your answer" />
-    <div class="check-container">
-      <div v-if="isAnswer" class="answerIsTrue">Right answer, greate!</div>
-      
-      <div v-else-if="isAnswer === false" class="answerIsFalse">
-        Wrong<br />
-        The right answer is
-        <span> "{{ currentWord.value[currentFormForComparison] }}"</span>
-      </div>
-      <div
-        v-else-if="answer === ''"
-        class="haveNoAnswer"
-      >
-        Wright the answer and push "Check"
-      </div>
-      <button @click="checkAnswer">Check</button><br />
+    <div>
+      <button @click="checkAnswer">Check</button>
       <button @click="restartGame">Restart</button>
     </div>
   </div>
@@ -85,7 +89,7 @@ export default defineComponent({
 
     function endGame() {
       console.log("end game work");
-      router.replace('/results')
+      router.replace("/results");
     }
 
     function checkAnswer() {
@@ -114,7 +118,7 @@ export default defineComponent({
           "my answer": answer.value,
           "correct answer": currentWord.value[currentFormForComparison.value],
         };
-        errorsStore.addError(errorObj); //змінити 
+        errorsStore.addError(errorObj); //змінити
         console.log(errorsStore.errorsArray);
         console.log(verbsStore.currentVerbs.length);
         setTimeout(() => {
@@ -149,7 +153,7 @@ export default defineComponent({
       restartGame,
       checkAnswer,
       progress,
-      calculateProgress
+      calculateProgress,
     };
   },
 });
@@ -163,18 +167,18 @@ span {
 button {
   margin: 10px;
 }
-.percent-progress{
+.percent-progress {
   text-align: end;
 }
 
-.progress-bar{
+.progress-bar {
   width: 100%;
   height: 5px;
   border: 1px solid black;
   border-radius: 3px;
   box-sizing: border-box;
 }
-.progress{
+.progress {
   height: 3px;
   background-color: rgb(1, 179, 120);
 }
