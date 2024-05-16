@@ -4,34 +4,136 @@
     @keyup.enter="checkAnswer"
   >
     <div>
-      <div class="progress-bar-wraper">
-        <div class="percent-progress">{{ calculateProgress(index) }}</div>
-        <div class="progress-bar">
-          <div class="progress" :style="{ width: progress }"></div>
-        </div>
+      <!-- Progress Bar start -->
+      <div
+        class="mb-1 font-medium text-gray-500 dark:text-gray-500 text-right text-xs mt-6"
+      >
+        {{ calculateProgress(index) }}
       </div>
-      <p>
-        What is the <span>{{ currentFormForComparison }}</span> form for the
-        verb <span>"to {{ currentWord.value["base form"] }}"</span>?
+      <div class="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700">
+        <div
+          class="bg-green-400 h-1.5 rounded-full dark:bg-green-500"
+          :style="{ width: progress }"
+        ></div>
+      </div>
+      <!-- Progress Bar end -->
+      <h4 class="text-xl font-bold dark:text-white text-gray-800">
+        What is the
+        <span class="text-blue-600">{{ currentFormForComparison }}</span> form
+        for the verb
+        <span class="text-green-600"
+          >"to {{ currentWord.value["base form"] }}"</span
+        >?
+      </h4>
+      <p class="text-sm text-orange-500 dark:text-white text-center mt-2 mb-4">
+        {{ index + 1 }} out of 20
       </p>
-      <div class="counter-display">{{ index + 1 }} out of 20</div>
-      <input type="text" v-model.trim="answer" placeholder="Your answer" />
+
+      <input
+        type="text"
+        id="answer"
+        v-model.trim="answer"
+        autocomplete="off"
+        class="bg-gray-50 border font-medium border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3.5 px-4 placeholder-gray-500 placehoder:font-normal dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        placeholder="Your answer"
+      />
+
       <div class="check-container">
         <div v-if="isAnswer" class="answerIsTrue">Right answer, greate!</div>
 
         <div v-else-if="isAnswer === false" class="answerIsFalse">
-          Wrong<br />
-          The right answer is
-          <span> "{{ currentWord.value[currentFormForComparison] }}"</span>
+          <p class="text-sm text-red-600 dark:text-white mt-2 mb-4">Wrong</p>
+          <p class="text-xl text-gray-900 dark:text-white font-bold">The right answer is
+          <span class="text-green-500"> "{{ currentWord.value[currentFormForComparison] }}"</span></p>
         </div>
-        <div v-else-if="answer === ''" class="haveNoAnswer">
+        <p
+          v-else-if="answer === ''"
+          class="text-sm text-gray-500 dark:text-white mt-2"
+        >
           Wright the answer and push "Check"
-        </div>
+        </p>
       </div>
     </div>
-    <div>
-      <button @click="checkAnswer">Check</button>
-      <button @click="restartGame">Restart</button>
+
+    <div class="flex flex-col">
+      <video
+        class="mb-1 place-self-center"
+        loading="lazy"
+        muted="muted"
+        src="../assets/video/laptopCat.mp4"
+        type="video/mp4"
+        autoplay="autoplay"
+        loop="loop"
+        width="224"
+        height="224"
+      ></video>
+      <div class="pb-4 flex">
+        <button
+          type="button"
+          @click="restartGame"
+          class="text-blue-700 flex-none border border-blue-700 py-3.5 px-6 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm text-center inline-flex items-center me-4 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800 dark:hover:bg-blue-500"
+        >
+          <svg
+            class="w-6 h-6 text-blue-700 dark:text-white hover:text-white focus:text-white"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17.651 7.65a7.131 7.131 0 0 0-12.68 3.15M18.001 4v4h-4m-7.652 8.35a7.13 7.13 0 0 0 12.68-3.15M6 20v-4h4"
+            />
+          </svg>
+        </button>
+
+        <button
+          type="button"
+          @click="checkAnswer"
+          class="text-white grow w-full bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-6 py-3.5 text-center inline-flex justify-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        >
+          <svg
+            class="w-6 h-6 text-white dark:text-white"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 11.917 9.724 16.5 19 7.5"
+            />
+          </svg>
+          Check & move on
+          <svg
+            class="w-6 h-6 text-white dark:text-white ml-2"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 12H5m14 0-4 4m4-4-4-4"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -160,11 +262,11 @@ export default defineComponent({
 </script>
 
 <style scoped>
-span {
+/* span {
   color: rgb(6, 133, 91);
   font-weight: 800;
-}
-button {
+} */
+/* button {
   margin: 10px;
 }
 .percent-progress {
@@ -181,5 +283,5 @@ button {
 .progress {
   height: 3px;
   background-color: rgb(1, 179, 120);
-}
+} */
 </style>

@@ -180,7 +180,7 @@ export default {
   color: #1c64f2;
 }
 .wraper{
-  height: calc(100vh - 64px - 82px);
+  height: calc(100vh - 64px - 90px);
 }
 /* footer nav {
   width: 100%;
