@@ -35,16 +35,36 @@
         v-model.trim="answer"
         autocomplete="off"
         class="bg-gray-50 border font-medium border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3.5 px-4 placeholder-gray-500 placehoder:font-normal dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        :class="{
+          'bg-red-50': isAnswer === false,
+          'border-red-500': isAnswer === false,
+          'text-red-700': isAnswer === false,
+          'bg-green-50': isAnswer,
+          'border-green-500': isAnswer,
+          'text-green-700': isAnswer,
+        }"
         placeholder="Your answer"
       />
 
       <div class="check-container">
-        <div v-if="isAnswer" class="answerIsTrue">Right answer, greate!</div>
+        <div v-if="isAnswer" class="answerIsTrue">
+          <p class="text-sm text-green-600 dark:text-white mt-2 mb-4">Right</p>
+          <p class="text-xl text-gray-900 dark:text-white font-bold">
+            Right answer,
+            <span class="text-green-500">
+              greate</span
+            >!
+          </p> 
+        </div>
 
         <div v-else-if="isAnswer === false" class="answerIsFalse">
           <p class="text-sm text-red-600 dark:text-white mt-2 mb-4">Wrong</p>
-          <p class="text-xl text-gray-900 dark:text-white font-bold">The right answer is
-          <span class="text-green-500"> "{{ currentWord.value[currentFormForComparison] }}"</span></p>
+          <p class="text-xl text-gray-900 dark:text-white font-bold">
+            The right answer is
+            <span class="text-green-500">
+              "{{ currentWord.value[currentFormForComparison] }}"</span
+            >
+          </p>
         </div>
         <p
           v-else-if="answer === ''"
