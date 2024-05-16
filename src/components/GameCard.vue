@@ -38,10 +38,14 @@
         :class="{
           'bg-red-50': isAnswer === false,
           'border-red-500': isAnswer === false,
+          'focus:border-red-500': isAnswer === false,
+          'focus:ring-red-500': isAnswer === false,
           'text-red-700': isAnswer === false,
           'bg-green-50': isAnswer,
           'border-green-500': isAnswer,
           'text-green-700': isAnswer,
+          'focus:border-green-500': isAnswer,
+          'focus:ring-green-500': isAnswer,
         }"
         placeholder="Your answer"
       />
@@ -51,10 +55,8 @@
           <p class="text-sm text-green-600 dark:text-white mt-2 mb-4">Right</p>
           <p class="text-xl text-gray-900 dark:text-white font-bold">
             Right answer,
-            <span class="text-green-500">
-              greate</span
-            >!
-          </p> 
+            <span class="text-green-500"> greate</span>!
+          </p>
         </div>
 
         <div v-else-if="isAnswer === false" class="answerIsFalse">
@@ -80,13 +82,23 @@
         class="mb-1 place-self-center"
         loading="lazy"
         muted="muted"
-        src="../assets/video/laptopCat.mp4"
-        type="video/mp4"
         autoplay="autoplay"
         loop="loop"
         width="224"
         height="224"
-      ></video>
+      >
+        <source
+          v-if="isAnswer"
+          src="../assets/video/answerTrue.mp4"
+          type="video/mp4"
+        />
+        <source
+          v-else-if="isAnswer === false"
+          src="../assets/video/answerFalse.mp4"
+          type="video/mp4"
+        />
+        <source v-else src="../assets/video/laptopCat.mp4" type="video/mp4" />
+      </video>
       <div class="pb-4 flex">
         <button
           type="button"
@@ -230,7 +242,7 @@ export default defineComponent({
             currentWord.value = verbsStore.currentVerbs[index.value];
             identifyForm();
           }
-        }, 1000);
+        }, 3000);
       } else {
         isAnswer.value = false;
         console.log(isAnswer.value);
@@ -254,7 +266,7 @@ export default defineComponent({
             currentWord.value = verbsStore.currentVerbs[index.value];
             identifyForm();
           }
-        }, 1000);
+        }, 3000);
       }
     }
 
