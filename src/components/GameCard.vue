@@ -78,27 +78,43 @@
     </div>
 
     <div class="flex flex-col">
-      <video
+      <video 
+        v-if="isAnswer === true"
         class="mb-1 place-self-center"
         loading="lazy"
         muted="muted"
         autoplay="autoplay"
+        type="video/mp4"
         loop="loop"
         width="224"
         height="224"
-      >
-        <source
-          v-if="isAnswer"
-          src="../assets/video/answerTrue.mp4"
-          type="video/mp4"
-        />
-        <source
-          v-else-if="isAnswer === false"
-          src="../assets/video/answerFalse.mp4"
-          type="video/mp4"
-        />
-        <source v-else src="../assets/video/laptopCat.mp4" type="video/mp4" />
-      </video>
+        src="../assets/video/answerTrue.mp4"
+      ></video>
+        <video 
+        v-else-if="isAnswer === false"
+        class="mb-1 place-self-center"
+        loading="lazy"
+        muted="muted"
+        autoplay="autoplay"
+        type="video/mp4"
+        loop="loop"
+        width="224"
+        height="224"
+        src="../assets/video/answerFalse.mp4"
+      ></video>
+        <video 
+        v-else
+        class="mb-1 place-self-center"
+        loading="lazy"
+        muted="muted"
+        autoplay="autoplay"
+        type="video/mp4"
+        loop="loop"
+        width="224"
+        height="224"
+        src="../assets/video/laptopCat.mp4"
+      ></video>
+      
       <div class="pb-4 flex">
         <button
           type="button"
@@ -227,7 +243,6 @@ export default defineComponent({
     }
 
     function checkAnswer() {
-      // перевірка
       if (answer.value == currentWord.value[currentFormForComparison.value]) {
         isAnswer.value = true;
         console.log(isAnswer.value);
@@ -242,7 +257,7 @@ export default defineComponent({
             currentWord.value = verbsStore.currentVerbs[index.value];
             identifyForm();
           }
-        }, 3000);
+        }, 2000);
       } else {
         isAnswer.value = false;
         console.log(isAnswer.value);
@@ -252,7 +267,7 @@ export default defineComponent({
           "my answer": answer.value,
           "correct answer": currentWord.value[currentFormForComparison.value],
         };
-        errorsStore.addError(errorObj); //змінити
+        errorsStore.addError(errorObj); 
         console.log(errorsStore.errorsArray);
         console.log(verbsStore.currentVerbs.length);
         setTimeout(() => {
@@ -266,7 +281,7 @@ export default defineComponent({
             currentWord.value = verbsStore.currentVerbs[index.value];
             identifyForm();
           }
-        }, 3000);
+        }, 2000);
       }
     }
 
@@ -274,7 +289,7 @@ export default defineComponent({
       this.$emit("restart");
       index.value = 0;
       answer.value = "";
-      errorsStore.$reset(); //змінити
+      errorsStore.$reset(); 
     }
 
     return {
@@ -294,26 +309,4 @@ export default defineComponent({
 </script>
 
 <style scoped>
-/* span {
-  color: rgb(6, 133, 91);
-  font-weight: 800;
-} */
-/* button {
-  margin: 10px;
-}
-.percent-progress {
-  text-align: end;
-}
-
-.progress-bar {
-  width: 100%;
-  height: 5px;
-  border: 1px solid black;
-  border-radius: 3px;
-  box-sizing: border-box;
-}
-.progress {
-  height: 3px;
-  background-color: rgb(1, 179, 120);
-} */
 </style>
