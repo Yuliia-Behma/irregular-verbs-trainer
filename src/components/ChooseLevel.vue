@@ -51,7 +51,6 @@
         >
       </div>
     </div>
-    <!-- <button @click="startGameBtn" :disabled="!level">Start</button> -->
       <button
         type="button"
         @click="startGameBtn"

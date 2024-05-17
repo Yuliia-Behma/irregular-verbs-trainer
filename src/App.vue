@@ -28,6 +28,7 @@
           >
         </div>
         <button
+          id="triggerEl"
           data-collapse-toggle="navbar-default"
           type="button"
           class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-900 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -58,7 +59,7 @@
             <li>
               <RouterLink
                 to="/"
-                class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 aria-current="page"
                 >Home</RouterLink
               >
@@ -160,6 +161,7 @@
 
 <script>
 import router from "@/router";
+// import { Collapse } from 'flowbite';
 
 export default {
   name: "App",
@@ -176,17 +178,13 @@ export default {
 
 <style>
 .router-link-active {
-  /* color: rgb(64, 153, 235); */
   color: #1c64f2;
+}
+.router-link-exact-active{
+  color:#1c64f2;
 }
 .wraper{
   height: calc(100vh - 64px - 90px);
 }
-/* footer nav {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  position: fixed;
-  bottom: 0;
-} */
+
 </style>
