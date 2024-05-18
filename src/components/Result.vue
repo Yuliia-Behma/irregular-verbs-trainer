@@ -62,6 +62,7 @@
 
     <div>
       <button
+        @click="restartGame"
         type="button"
         class="text-white grow w-full bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-6 py-3.5 text-center inline-flex justify-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
       >
@@ -104,6 +105,7 @@
       </button>
       <button
       v-if="score !== 100"
+      @click="showDetails"
         type="button"
         class="text-blue-700 w-full hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-5 py-3.5 text-center text-base mt-6 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800 inline-flex justify-center"
       >
@@ -132,6 +134,7 @@
 <script>
 import { onMounted, ref } from "vue";
 import { useErrorsStore } from "@/store/errors";
+import router from "@/router";
 
 export default {
   name: "Result",
@@ -139,12 +142,13 @@ export default {
   setup() {
     const countOfMistakes = ref(0);
     const errorsArray = ref([]);
+    let errorStore;
     let score = ref(0);
     let message = ref("");
     let color = ref("");
 
     onMounted(() => {
-      const errorStore = useErrorsStore();
+      errorStore = useErrorsStore();
       console.log(errorStore);
       errorsArray.value = errorStore.errorsArray;
       console.log(errorsArray.value);
@@ -167,12 +171,23 @@ export default {
       }
     });
 
+    function restartGame() {
+      errorStore.$reset();
+      router.replace("/choose-level")
+    }
+
+    function showDetails() {
+      router.replace("/result-details");
+    }
+
     return {
       countOfMistakes,
       errorsArray,
       score,
       message,
       color,
+      restartGame,
+      showDetails
     };
   },
 };

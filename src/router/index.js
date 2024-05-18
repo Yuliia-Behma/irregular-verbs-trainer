@@ -5,6 +5,7 @@ import VerbList from "@/pages/VerbList.vue";
 import ChooseLevel from "@/components/ChooseLevel.vue"
 import GameRules from "@/pages/GameRules.vue";
 import Result from "@/components/Result.vue";
+import ResultDetails from "@/components/ResultDetails.vue";
 
 const routes = [
         {
@@ -26,6 +27,10 @@ const routes = [
         {
             path: '/results',
             component: Result
+    },
+        {
+            path: '/result-details',
+            component: ResultDetails
         }
 ]
 
