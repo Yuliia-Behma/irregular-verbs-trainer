@@ -23,42 +23,42 @@
       </p>
     </div>
 
-    <video 
-        v-if="score === 100"
-        class="mb-1 place-self-center"
-        loading="lazy"
-        muted="muted"
-        autoplay="autoplay"
-        type="video/mp4"
-        loop="loop"
-        width="224"
-        height="224"
-        src="../assets/video/excellent.mp4"
-      ></video>
-        <video 
-        v-else-if="score < 100 && score > 70"
-        class="mb-1 place-self-center"
-        loading="lazy"
-        muted="muted"
-        autoplay="autoplay"
-        type="video/mp4"
-        loop="loop"
-        width="224"
-        height="224"
-        src="../assets/video/green.mp4"
-      ></video>
-        <video 
-        v-else-if="color === 'orange' || color === 'red'"
-        class="mb-1 place-self-center"
-        loading="lazy"
-        muted="muted"
-        autoplay="autoplay"
-        type="video/mp4"
-        loop="loop"
-        width="224"
-        height="224"
-        src="../assets/video/redOrange.mp4"
-      ></video>
+    <video
+      v-if="score === 100"
+      class="mb-1 place-self-center"
+      loading="lazy"
+      muted="muted"
+      autoplay="autoplay"
+      type="video/mp4"
+      loop="loop"
+      width="224"
+      height="224"
+      src="../assets/video/excellent.mp4"
+    ></video>
+    <video
+      v-else-if="score < 100 && score > 70"
+      class="mb-1 place-self-center"
+      loading="lazy"
+      muted="muted"
+      autoplay="autoplay"
+      type="video/mp4"
+      loop="loop"
+      width="224"
+      height="224"
+      src="../assets/video/green.mp4"
+    ></video>
+    <video
+      v-else-if="color === 'orange' || color === 'red'"
+      class="mb-1 place-self-center"
+      loading="lazy"
+      muted="muted"
+      autoplay="autoplay"
+      type="video/mp4"
+      loop="loop"
+      width="224"
+      height="224"
+      src="../assets/video/redOrange.mp4"
+    ></video>
 
     <div>
       <button
@@ -102,6 +102,29 @@
           />
         </svg>
       </button>
+      <button
+      v-if="score !== 100"
+        type="button"
+        class="text-blue-700 w-full hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-5 py-3.5 text-center text-base mt-6 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800 inline-flex justify-center"
+      >
+        <svg
+          class="w-[24px] h-[24px] text-blue-700 dark:text-white me-2"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke="currentColor"
+            stroke-width="2"
+            d="M3 11h18M3 15h18m-9-4v8m-8 0h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"
+          />
+        </svg>
+
+        See details
+      </button>
     </div>
   </div>
 </template>
@@ -116,7 +139,7 @@ export default {
   setup() {
     const countOfMistakes = ref(0);
     const errorsArray = ref([]);
-    let score = ref(100);
+    let score = ref(0);
     let message = ref("");
     let color = ref("");
 
@@ -127,7 +150,7 @@ export default {
       console.log(errorsArray.value);
       countOfMistakes.value = errorsArray.value.length;
       // 5 - відсоток 1 помилки
-      score.value -= countOfMistakes.value * 5;
+      score.value = 100 - countOfMistakes.value * 5;
 
       if (score.value === 100) {
         message.value = "Excellent!";
