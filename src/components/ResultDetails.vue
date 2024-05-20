@@ -2,8 +2,11 @@
   <div
     class="wraper px-6 pb-4 pt-6 flex flex-col justify-between w-full max-w-md my-0 mx-auto"
   >
-    Your result is {{ 20 - countOfMistakes }} / 20
-
+  <div>
+    <p class="text-xl font-bold text-gray-900 dark:text-white text-center">Your result</p>
+    <p class="text-xl text-gray-900 font-semibold text-center dark:text-white my-2">%</p>
+    <p class="text-sm text-gray-600 dark:text-white text-center font-medium"><span class="text-orange-600">{{ 20 - countOfMistakes }}</span>/20 correct answers</p>
+  </div> 
     <table>
       <thead>
         <tr>
