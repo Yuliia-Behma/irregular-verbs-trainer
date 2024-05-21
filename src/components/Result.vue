@@ -19,7 +19,7 @@
         {{ score }}% {{ message }}
       </p>
       <p class="text-sm text-orange-600 dark:text-white text-center">
-        {{ 20 - countOfMistakes }} out of 20 correct answers
+        {{ 20 - currentCountOfMistakes }} out of 20 correct answers
       </p>
     </div>
 
@@ -140,8 +140,8 @@ export default {
   name: "Result",
 
   setup() {
-    const countOfMistakes = ref(0);
-    const errorsArray = ref([]);
+    let currentCountOfMistakes = ref(0);
+    let errorsArray = ref([]);
     let errorStore;
     let score = ref(0);
     let message = ref("");
@@ -152,23 +152,13 @@ export default {
       console.log(errorStore);
       errorsArray.value = errorStore.errorsArray;
       console.log(errorsArray.value);
-      countOfMistakes.value = errorsArray.value.length;
+      errorStore.getAllValues();
+      currentCountOfMistakes.value = errorStore.countOfMistakes;
+      console.log(currentCountOfMistakes);
       // 5 - відсоток 1 помилки
-      score.value = 100 - countOfMistakes.value * 5;
-
-      if (score.value === 100) {
-        message.value = "Excellent!";
-        color.value = "green";
-      } else if (score.value < 100 && score.value > 70) {
-        message.value = "Good job!";
-        color.value = "green";
-      } else if (score.value <= 70 && score.value > 30) {
-        message.value = "You can do better!";
-        color.value = "orange";
-      } else {
-        message.value = "Do not upset the Cat, practice more!";
-        color.value = "red";
-      }
+      score.value = errorStore.score;
+      message.value = errorStore.message;
+      color.value = errorStore.color;
     });
 
     function restartGame() {
@@ -181,7 +171,7 @@ export default {
     }
 
     return {
-      countOfMistakes,
+      currentCountOfMistakes,
       errorsArray,
       score,
       message,
