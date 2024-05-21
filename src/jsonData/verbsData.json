@@ -86,11 +86,6 @@
     "past participle": "fallen"
   },
   {
-    "base form": "fall",
-    "past simple": "fell",
-    "past participle": "fallen"
-  },
-  {
     "base form": "feel",
     "past simple": "felt",
     "past participle": "felt"
@@ -227,7 +222,7 @@
   },
   {
     "base form": "send",
-    "past": "sent",
+    "past simple": "sent",
     "past participle": "sent"
   },
   {
@@ -346,7 +341,7 @@
     {
       "base form": "bear",
       "past simple": "bore",
-      "past participle": "born(e)"
+      "past participle": "borne"
     },
     {
       "base form": "beat",
@@ -420,8 +415,8 @@
     },
     {
       "base form": "burn",
-      "past simple": "burnt/burned",
-      "past participle": "burnt/burned"
+      "past simple": "burnt",
+      "past participle": "burnt"
     },
     {
       "base form": "burst",
@@ -495,8 +490,8 @@
     },
     {
       "base form": "dream",
-      "past simple": "dreamt/dreamed",
-      "past participle": "dreamt/dreamed"
+      "past simple": "dreamt",
+      "past participle": "dreamt"
     },
     {
       "base form": "drink",
@@ -650,13 +645,13 @@
     },
     {
       "base form": "lean",
-      "past simple": "leant/leaned",
-      "past participle": "leant/leaned"
+      "past simple": "leant",
+      "past participle": "leant"
     },
     {
       "base form": "learn",
-      "past simple": "learnt/learned",
-      "past participle": "learnt/learned"
+      "past simple": "learnt",
+      "past participle": "learnt"
     },
     {
       "base form": "leave",
@@ -680,8 +675,8 @@
     },
     {
       "base form": "light",
-      "past simple": "lit/lighted",
-      "past participle": "lit/lighted"
+      "past simple": "lit",
+      "past participle": "lit"
     },
     {
       "base form": "lose",
@@ -692,11 +687,6 @@
       "base form": "make",
       "past simple": "made",
       "past participle": "made"
-    },
-    {
-      "base form": "may",
-      "past simple": "might",
-      "past participle": "…"
     },
     {
       "base form": "mean",
@@ -711,12 +701,7 @@
     {
       "base form": "mow",
       "past simple": "mowed",
-      "past participle": "mown/mowed"
-    },
-    {
-      "base form": "must",
-      "past simple": "had to",
-      "past participle": "…"
+      "past participle": "mown"
     },
     {
       "base form": "overtake",
@@ -761,7 +746,7 @@
     {
       "base form": "saw",
       "past simple": "sawed",
-      "past participle": "sawn/sawed"
+      "past participle": "sawn"
     },
     {
       "base form": "say",
@@ -791,17 +776,12 @@
     {
       "base form": "sew",
       "past simple": "sewed",
-      "past participle": "sewn/sewed"
+      "past participle": "sewn"
     },
     {
       "base form": "shake",
       "past simple": "shook",
       "past participle": "shaken"
-    },
-    {
-      "base form": "shall",
-      "past simple": "should",
-      "past participle": "…"
     },
     {
       "base form": "shed",
@@ -866,7 +846,7 @@
     {
       "base form": "sow",
       "past simple": "sowed",
-      "past participle": "sown/sowed"
+      "past participle": "sown"
     },
     {
       "base form": "speak",
@@ -875,8 +855,8 @@
     },
     {
       "base form": "spell",
-      "past simple": "spelt/spelled",
-      "past participle": "spelt/spelled"
+      "past simple": "spelt",
+      "past participle": "spelt"
     },
     {
       "base form": "spend",
@@ -885,8 +865,8 @@
     },
     {
       "base form": "spill",
-      "past simple": "spilt/spilled",
-      "past participle": "spilt/spilled"
+      "past simple": "spilt",
+      "past participle": "spilt"
     },
     {
       "base form": "spit",
@@ -941,7 +921,7 @@
     {
       "base form": "swell",
       "past simple": "swelled",
-      "past participle": "swollen/swelled"
+      "past participle": "swollen"
     },
     {
       "base form": "swim",
@@ -1002,11 +982,6 @@
       "base form": "weep",
       "past simple": "wept",
       "past participle": "wept"
-    },
-    {
-      "base form": "will",
-      "past simple": "would",
-      "past participle": "…"
     },
     {
       "base form": "win",
@@ -1522,12 +1497,12 @@
     "past participle": "burnt"
   },
   {
-    "base form": "lie",
+    "base form": "lie (in bed)",
     "past simple": "lay",
     "past participle": "lain"
   },
   {
-    "base form": "lie",
+    "base form": "lie (not truth)",
     "past simple": "lied",
     "past participle": "lied"
   },

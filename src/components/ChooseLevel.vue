@@ -85,6 +85,7 @@
 <script>
 import { defineComponent, ref } from "vue";
 import GameCard from "./GameCard.vue";
+import { useErrorsStore } from "@/store/errors";
 
 export default defineComponent({
   name: "ChooseLevel",
@@ -93,8 +94,10 @@ export default defineComponent({
   setup() {
     const level = ref("");
     const allow = ref(false);
+    let errorStore = useErrorsStore();
 
     function startGameBtn() {
+      errorStore.$reset();
       allow.value = true;
     }
 

@@ -22,7 +22,7 @@ function backToStart() {
       Rules
       </h3>
       <p class="text-gray-800 dark:text-gray-400">
-        Here are the rules for our exercise tool. First, choose your difficulty level. The level depends on the number of irregular verbs from which 20 will be randomly selected for each game.
+      First, choose your difficulty level. The level depends on the number of irregular verbs from which 20 will be randomly selected for each game.
       </p>
       <p class="text-gray-800 dark:text-gray-400"><span class="text-green-600 font-bold">Beginner</span> - includes the <span class="font-bold">60</span> most common irregular verbs.</p>
       <p class="text-gray-800 dark:text-gray-400"><span class="text-yellow-400 font-bold">Intermediate</span> - features <span class="font-bold">140</span> verbs, including some less frequently used ones.</p>
