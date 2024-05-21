@@ -110,7 +110,7 @@
         class="text-blue-700 w-full hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-5 py-3.5 text-center text-base mt-6 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800 inline-flex justify-center"
       >
         <svg
-          class="w-[24px] h-[24px] text-blue-700 dark:text-white me-2"
+          class="w-[24px] h-[24px] text-current-color dark:text-white me-2"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
