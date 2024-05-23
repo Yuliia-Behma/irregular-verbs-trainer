@@ -104,8 +104,8 @@
         </svg>
       </button>
       <button
-      v-if="score !== 100"
-      @click="showDetails"
+        v-if="score !== 100"
+        @click="showDetails"
         type="button"
         class="text-blue-700 w-full hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-5 py-3.5 text-center text-base mt-6 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800 inline-flex justify-center"
       >
@@ -149,12 +149,12 @@ export default {
 
     onMounted(() => {
       errorStore = useErrorsStore();
-      console.log(errorStore);
+      // console.log(errorStore);
       errorsArray.value = errorStore.errorsArray;
-      console.log(errorsArray.value);
+      // console.log(errorsArray.value);
       errorStore.getAllValues();
       currentCountOfMistakes.value = errorStore.countOfMistakes;
-      console.log(currentCountOfMistakes);
+      // console.log(currentCountOfMistakes);
       // 5 - відсоток 1 помилки
       score.value = errorStore.score;
       message.value = errorStore.message;
@@ -163,7 +163,7 @@ export default {
 
     function restartGame() {
       errorStore.$reset();
-      router.replace("/choose-level")
+      router.replace("/choose-level");
     }
 
     function showDetails() {
@@ -177,7 +177,7 @@ export default {
       message,
       color,
       restartGame,
-      showDetails
+      showDetails,
     };
   },
 };

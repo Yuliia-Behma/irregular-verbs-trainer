@@ -9,19 +9,19 @@ export const useVerbsStore = defineStore({
     actions: {
         getCurrentGameVerbsList(level) {
             const wordsData = json;
-            console.log(level)
+            // console.log(level)
             const currentLevelArr = wordsData[`${level}`];
-            console.log(currentLevelArr)
+            // console.log(currentLevelArr)
 
             const sortedArr = currentLevelArr
                 .map(value => ({ value, sort: Math.random() }))
                 .sort((a, b) => a.sort - b.sort)
                 .map(({ value }) => value)
 
-            console.log(sortedArr)
+            // console.log(sortedArr)
             sortedArr.length = 20;
             this.currentVerbs = sortedArr
-            console.log(this.currentVerbs)
+            // console.log(this.currentVerbs)
         }
     }
 })

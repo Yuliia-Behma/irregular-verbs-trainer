@@ -57,8 +57,4 @@ function passing() {
   </div>
 </template>
 
-<style scoped>
-/* .wraper{
-  height: calc(100vh - 64px - 82px);
-} */
-</style>
+<style scoped></style>

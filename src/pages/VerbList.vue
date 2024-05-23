@@ -31,24 +31,33 @@
         </svg>
       </button>
     </div>
-    <div class="tableWraper mt-10 rounded-lg overflow-y-auto shadow shadow-md max-w-full">
+    <div
+      class="tableWraper mt-10 rounded-lg overflow-y-auto shadow shadow-md max-w-full"
+    >
       <table
         class="w-full max-w-full box-border table-fixed text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
       >
-        <thead style="font-size: 11px;"
+        <thead
+          style="font-size: 11px"
           class="text-gray-500 font-semibold uppercase text-center bg-gray-50 dark:bg-gray-700 dark:text-gray-400 sticky top-0"
         >
           <tr class="border-b">
             <th scope="col" class="p-4 bg-yellow-50 leading-4">Base form</th>
-            <th scope="col" class="p-4 bg-green-50  leading-4">Past simple</th>
-            <th scope="col" class="p-4 bg-blue-50 leading-4">Past participle</th>
+            <th scope="col" class="p-4 bg-green-50 leading-4">Past simple</th>
+            <th scope="col" class="p-4 bg-blue-50 leading-4">
+              Past participle
+            </th>
           </tr>
         </thead>
         <tbody class="text-sm text-gray-900">
           <tr v-for="item in list" :key="item">
             <td class="py-4 ps-4 box-border">{{ item["base form"] }}</td>
-            <td class="py-4 ps-3 font-medium box-border">{{ item["past simple"] }}</td>
-            <td class="py-4 ps-4 pe-3 font-semibold box-border">{{ item["past participle"] }}</td>
+            <td class="py-4 ps-3 font-medium box-border">
+              {{ item["past simple"] }}
+            </td>
+            <td class="py-4 ps-4 pe-3 font-semibold box-border">
+              {{ item["past participle"] }}
+            </td>
           </tr>
         </tbody>
       </table>
@@ -90,11 +99,8 @@ export default {
   height: calc(100% - 86px);
   scrollbar-width: thin;
 }
-/* ::-webkit-scrollbar {
-  width: 30px;
-} */
 
 tbody > :nth-child(even) {
-  background-color:  #f3f4f6;
+  background-color: #f3f4f6;
 }
 </style>

@@ -143,9 +143,9 @@ export default {
 
     onMounted(() => {
       errorStore = useErrorsStore();
-      console.log(errorStore);
+      // console.log(errorStore);
       errorsArray.value = errorStore.errorsArray;
-      console.log(errorsArray.value);
+      // console.log(errorsArray.value);
       errorStore.getAllValues();
       countOfMistakes.value = errorStore.countOfMistakes;
       score.value = errorStore.score;

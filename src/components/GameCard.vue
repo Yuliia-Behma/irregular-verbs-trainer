@@ -78,7 +78,7 @@
     </div>
 
     <div class="flex flex-col">
-      <video 
+      <video
         v-if="isAnswer === true"
         class="place-self-center"
         loading="lazy"
@@ -90,7 +90,7 @@
         height="224"
         src="../assets/video/answerTrue.mp4"
       ></video>
-        <video 
+      <video
         v-else-if="isAnswer === false"
         class="place-self-center"
         loading="lazy"
@@ -102,7 +102,7 @@
         height="224"
         src="../assets/video/answerFalse.mp4"
       ></video>
-        <video 
+      <video
         v-else
         class="place-self-center"
         loading="lazy"
@@ -114,7 +114,7 @@
         height="224"
         src="../assets/video/laptopCat.mp4"
       ></video>
-      
+
       <div class="pb-4 flex">
         <button
           type="button"
@@ -245,7 +245,7 @@ export default defineComponent({
     function checkAnswer() {
       if (answer.value == currentWord.value[currentFormForComparison.value]) {
         isAnswer.value = true;
-        console.log(isAnswer.value);
+        // console.log(isAnswer.value);
         setTimeout(() => {
           isAnswer.value = null;
           if (index.value == verbsStore.currentVerbs.length - 1) {
@@ -260,16 +260,16 @@ export default defineComponent({
         }, 2000);
       } else {
         isAnswer.value = false;
-        console.log(isAnswer.value);
+        // console.log(isAnswer.value);
         const errorObj = {
           "base form": currentWord.value["base form"],
           "comparison form": currentFormForComparison.value,
           "my answer": answer.value,
           "correct answer": currentWord.value[currentFormForComparison.value],
         };
-        errorsStore.addError(errorObj); 
-        console.log(errorsStore.errorsArray);
-        console.log(verbsStore.currentVerbs.length);
+        errorsStore.addError(errorObj);
+        // console.log(errorsStore.errorsArray);
+        // console.log(verbsStore.currentVerbs.length);
         setTimeout(() => {
           isAnswer.value = null;
           if (index.value == verbsStore.currentVerbs.length - 1) {
@@ -289,7 +289,7 @@ export default defineComponent({
       this.$emit("restart");
       index.value = 0;
       answer.value = "";
-      errorsStore.$reset(); 
+      errorsStore.$reset();
     }
 
     return {
@@ -308,5 +308,4 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
