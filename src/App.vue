@@ -194,7 +194,11 @@ export default {
 .wraper {
   height: calc(100vh - 64px - 90px);
 }
-
+@media (max-width: 400px){
+  .wraper {
+  height: calc(100vh - 64px - 90px - 40px);
+}
+}
 .router-link-active span {
   color: #1c64f2;
 }
