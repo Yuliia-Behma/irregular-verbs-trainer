@@ -80,7 +80,7 @@
     <div class="flex flex-col">
       <video 
         v-if="isAnswer === true"
-        class="mb-1 place-self-center"
+        class="place-self-center"
         loading="lazy"
         muted="muted"
         autoplay="autoplay"
@@ -92,7 +92,7 @@
       ></video>
         <video 
         v-else-if="isAnswer === false"
-        class="mb-1 place-self-center"
+        class="place-self-center"
         loading="lazy"
         muted="muted"
         autoplay="autoplay"
@@ -104,7 +104,7 @@
       ></video>
         <video 
         v-else
-        class="mb-1 place-self-center"
+        class="place-self-center"
         loading="lazy"
         muted="muted"
         autoplay="autoplay"

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="wraper px-6 pb-4 pt-6 flex flex-col justify-between w-full max-w-md my-0 mx-auto relative"
+    class="wraper px-6 pb-4 pt-6 flex flex-col justify-between w-full max-w-lg my-0 mx-auto relative"
   >
     <button
       type="button"
@@ -46,24 +46,45 @@
         >/20 correct answers
       </p>
     </div>
-    <table>
-      <thead>
-        <tr>
-          <th v-for="(value, name) in errorsArray[0]" :key="value">
-            {{ name }}
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="error in errorsArray" :key="error">
-          <td v-for="value in error" :key="value">{{ value }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div
+      class="tableWraper my-10 rounded-lg overflow-y-auto shadow shadow-md max-w-full"
+    >
+      <table
+        class="w-full max-w-full box-border table-fixed text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+      >
+        <thead
+          style="font-size: 11px"
+          class="text-gray-500 uppercase text-center font-semibold bg-gray-50 dark:bg-gray-700 dark:text-gray-400 sticky top-0"
+        >
+          <tr class="border-b">
+            <th scope="col" class="p-4 bg-yellow-50 leading-4">Base form</th>
+            <th scope="col" class="p-4 bg-blue-50 leading-4">
+              Form to convert
+            </th>
+            <th scope="col" class="p-4 bg-red-50 leading-4">My answer</th>
+            <th scope="col" class="p-4 bg-green-50 leading-4">Right answer</th>
+          </tr>
+        </thead>
+        <tbody class="text-sm text-gray-900">
+          <tr v-for="error in errorsArray" :key="error">
+            <td class="py-4 ps-4 box-border">{{ error["base form"] }}</td>
+            <td class="comparison py-4 ps-4 font-medium box-border">
+              {{ error["comparison form"] }}
+            </td>
+            <td class="py-4 ps-4 pe-3 font-semibold box-border text-red-600">
+              {{ error["my answer"] }}
+            </td>
+            <td class="py-4 ps-4 pe-3 font-semibold box-border text-green-600">
+              {{ error["correct answer"] }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <button
       @click="restartGame"
       type="button"
-      class="text-white w-full bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-6 py-3.5 text-center inline-flex justify-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      class="text-white w-full max-w-sm self-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-6 py-3.5 text-center inline-flex justify-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
     >
       <svg
         class="w-6 h-6 text-white dark:text-white mr-2"
@@ -137,7 +158,7 @@ export default {
     }
 
     function comeBack() {
-      router.replace('/results');
+      router.replace("/results");
     }
 
     return {
@@ -147,15 +168,21 @@ export default {
       restartGame,
       score,
       color,
-      comeBack
+      comeBack,
     };
   },
 };
 </script>
 
 <style scoped>
-th,
-td {
-  border: 1px solid black;
+.tableWraper {
+  height: calc(100% - 120px);
+  scrollbar-width: thin;
+}
+tbody > :nth-child(even) {
+  background-color: #f3f4f6;
+}
+.comparison {
+  text-transform: capitalize;
 }
 </style>

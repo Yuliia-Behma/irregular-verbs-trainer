@@ -36,7 +36,7 @@
         class="w-full max-w-full box-border table-fixed text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
       >
         <thead style="font-size: 11px;"
-          class="text-gray-500 uppercase text-center bg-gray-50 dark:bg-gray-700 dark:text-gray-400 sticky top-0"
+          class="text-gray-500 font-semibold uppercase text-center bg-gray-50 dark:bg-gray-700 dark:text-gray-400 sticky top-0"
         >
           <tr class="border-b">
             <th scope="col" class="p-4 bg-yellow-50 leading-4">Base form</th>
