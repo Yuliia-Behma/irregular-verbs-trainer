@@ -196,7 +196,7 @@ export default {
 }
 @media (max-width: 400px){
   .wraper {
-  height: calc(100vh - 64px - 90px - 40px);
+  height: calc(100vh - 64px - 90px - 64px);
 }
 }
 .router-link-active span {
