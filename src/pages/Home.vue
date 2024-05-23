@@ -8,7 +8,7 @@ function passing() {
 
 <template>
   <div class="wraper flex flex-col w-full max-w-md justify-between my-0 mx-auto">
-  <div class="px-6 pb-8 pt-10">
+  <div class="px-6 pt-10">
     <h3 class="text-2xl text-gray-900 font-bold dark:text-white pb-3 pt-2">
       Greetings, friend!
     </h3>
@@ -21,12 +21,12 @@ function passing() {
     </p>
   </div>
   <!-- <div class="absolute left-0 bottom-6 w-full px-6 pt-0 pb-16"></div> -->
-  <div class="flex flex-col items-center">
-  <video class="mb-10" loading="lazy" muted="muted" src="../assets/video/greetings.mp4" type="video/mp4" autoplay="autoplay" loop="loop" width="224" height="224"></video>
+  <div class="flex flex-col items-center px-6">
+  <video class="mb-7" loading="lazy" muted="muted" src="../assets/video/greetings.mp4" type="video/mp4" autoplay="autoplay" loop="loop" width="224" height="224"></video>
     <button
       type="button"
       @click="passing"
-      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-m px-5 py-3.5 text-center flex flex-row justify-center max-w-sm w-full dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mb-4"
+      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-m px-5 py-3.5 text-center flex flex-row justify-center max-w-md w-full dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mb-4"
     >
       <span class="mr-2">Start</span>
       <svg

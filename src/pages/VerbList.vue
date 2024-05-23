@@ -31,51 +31,24 @@
         </svg>
       </button>
     </div>
-
-    <!-- <table class="main-table">
-      <tr>
-        <td>
-          <table class="header-table">
-            <tr>
-              <th>Base form</th>
-              <th>Past simple</th>
-              <th>Past participle</th>
-            </tr>
-          </table>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <div class="isolated-div">
-            <table class="body-table">
-              <tr v-for="item in list" :key="item" class="table-row">
-                <td>{{ item["base form"] }}</td>
-                <td>{{ item["past simple"] }}</td>
-                <td>{{ item["past participle"] }}</td>
-              </tr>
-            </table>
-          </div>
-        </td>
-      </tr>
-    </table> -->
-    <div class="tableWraper mt-10 rounded-lg overflow-y-auto shadow shadow-md">
+    <div class="tableWraper mt-10 rounded-lg overflow-y-auto shadow shadow-md max-w-full">
       <table
-        class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+        class="w-full max-w-full box-border table-fixed text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
       >
-        <thead
-          class="text-xs text-gray-500 uppercase text-center bg-gray-50 dark:bg-gray-700 dark:text-gray-400 sticky top-0"
+        <thead style="font-size: 11px;"
+          class="text-gray-500 uppercase text-center bg-gray-50 dark:bg-gray-700 dark:text-gray-400 sticky top-0"
         >
           <tr class="border-b">
-            <th scope="col" class="p-4 bg-yellow-50">Base form</th>
-            <th scope="col" class="p-4 bg-green-50">Past simple</th>
-            <th scope="col" class="p-4 bg-blue-50">Past participle</th>
+            <th scope="col" class="p-4 bg-yellow-50 leading-4">Base form</th>
+            <th scope="col" class="p-4 bg-green-50  leading-4">Past simple</th>
+            <th scope="col" class="p-4 bg-blue-50 leading-4">Past participle</th>
           </tr>
         </thead>
-        <tbody class="text-sm text-gray-900 overflow-y-auto">
+        <tbody class="text-sm text-gray-900">
           <tr v-for="item in list" :key="item">
-            <td class="p-4">{{ item["base form"] }}</td>
-            <td class="p-4 font-medium">{{ item["past simple"] }}</td>
-            <td class="p-4 font-semibold">{{ item["past participle"] }}</td>
+            <td class="py-4 ps-4 box-border">{{ item["base form"] }}</td>
+            <td class="py-4 ps-3 font-medium box-border">{{ item["past simple"] }}</td>
+            <td class="py-4 ps-4 pe-3 font-semibold box-border">{{ item["past participle"] }}</td>
           </tr>
         </tbody>
       </table>
@@ -115,11 +88,11 @@ export default {
 <style scoped>
 .tableWraper {
   height: calc(100% - 86px);
-  scrollbar-width: none;
+  scrollbar-width: thin;
 }
-::-webkit-scrollbar {
-  width: 0;
-}
+/* ::-webkit-scrollbar {
+  width: 30px;
+} */
 
 tbody > :nth-child(even) {
   background-color:  #f3f4f6;

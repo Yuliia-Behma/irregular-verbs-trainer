@@ -16,7 +16,7 @@
         />
         <label
           for="easyLevel"
-          class="block max-w-sm p-4 w-full text-lg font-semibold text-gray-900 dark:text-white bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 shadow-md shadow-gray-300/1"
+          class="block max-w-md p-4 w-full text-lg font-semibold text-gray-900 dark:text-white bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 shadow-md shadow-gray-300/1"
           >Beginner</label
         >
       </div>
@@ -31,7 +31,7 @@
         />
         <label
           for="mediumLevel"
-          class="block max-w-sm p-4 w-full text-lg font-semibold text-gray-900 dark:text-white bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 shadow-md shadow-gray-300/1"
+          class="block max-w-md p-4 w-full text-lg font-semibold text-gray-900 dark:text-white bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 shadow-md shadow-gray-300/1"
           >Intermediate</label
         >
       </div>
@@ -46,7 +46,7 @@
         />
         <label
           for="hardLevel"
-          class="block max-w-sm p-4 w-full text-lg font-semibold text-gray-900 dark:text-white bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 shadow-md shadow-gray-300/1"
+          class="block max-w-md p-4 w-full text-lg font-semibold text-gray-900 dark:text-white bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 shadow-md shadow-gray-300/1"
           >Advanced</label
         >
       </div>
@@ -55,7 +55,7 @@
         type="button"
         @click="startGameBtn"
         :disabled="!level"
-        class="text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-m px-5 py-3.5 text-center flex flex-row justify-center max-w-sm w-full dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 my-4 place-self-center"
+        class="text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-m px-5 py-3.5 text-center flex flex-row justify-center max-w-md w-full dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 my-4 place-self-center"
         :class="{
           'cursor-not-allowed': !level,
           'bg-blue-500': !level,

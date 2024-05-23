@@ -15,7 +15,7 @@ function backToStart() {
 
 <template>
   <div
-    class="wraper px-6 pb-4 pt-10 flex flex-col justify-between w-full max-w-md my-0 mx-auto relative overflow-y-auto"
+    class="wraper px-6 pb-4 pt-10 flex flex-col justify-between w-full max-w-xl my-0 mx-auto relative overflow-y-auto"
   >
     <div class="text-justify">
       <h3 class="text-2xl text-gray-900 font-bold dark:text-white pb-3 pt-2">
@@ -32,7 +32,7 @@ function backToStart() {
     <button
       type="button"
       @click="backToStart"
-      class="text-blue-700 w-full hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-5 py-3.5 text-center text-base mt-6 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800 inline-flex justify-center"
+      class="text-blue-700 w-full max-w-sm self-center hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-5 py-3.5 text-center text-base mt-6 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800 inline-flex justify-center"
     >
       <svg
         class="w-[24px] h-[24px] text-current-color me-2 dark:text-white"
