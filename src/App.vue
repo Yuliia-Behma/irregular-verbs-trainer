@@ -195,4 +195,11 @@ export default {
   height: calc(100vh - 64px - 90px);
 }
 
+.router-link-active span{
+  color: #1c64f2;
+}
+.router-link-exact-active svg{
+  color:#1c64f2;
+}
+
 </style>
