@@ -33,6 +33,7 @@
         type="text"
         id="answer"
         v-model.trim="answer"
+        @input="() => (answer = answer.toLowerCase())"
         autocomplete="off"
         class="bg-gray-50 border font-medium border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3.5 px-4 placeholder-gray-500 placehoder:font-normal dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
         :class="{
