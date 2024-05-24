@@ -194,9 +194,9 @@ export default {
 .wraper {
   height: calc(100vh - 64px - 90px);
 }
-@media (max-width: 400px){
+@media (max-width: 468px){
   .wraper {
-  height: calc(100vh - 64px - 90px - 64px);
+  height: calc(100vh - 64px - 90px - 34px - 49px);
 }
 }
 .router-link-active span {
