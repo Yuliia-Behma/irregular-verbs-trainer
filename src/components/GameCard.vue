@@ -147,7 +147,7 @@
           class="text-white grow w-full bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-6 py-3.5 text-center inline-flex justify-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
           <svg
-            class="w-6 h-6 text-white dark:text-white"
+            class="w-6 h-6 me-2 text-white dark:text-white"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -163,7 +163,7 @@
               d="M5 11.917 9.724 16.5 19 7.5"
             />
           </svg>
-          Check & move on
+          Check
           <svg
             class="w-6 h-6 text-white dark:text-white ml-2"
             aria-hidden="true"
