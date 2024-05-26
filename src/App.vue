@@ -9,6 +9,7 @@
         <div
           class="flex items-center space-x-3 rtl:space-x-reverse"
           @click="passingToHome"
+          :class="{ disabled: isLogoClickable === false}"
         >
           <svg
             class="w-[32px] h-[32px] text-gray-800 dark:text-white"
@@ -165,12 +166,17 @@
 import router from "@/router";
 import { useVerbsStore } from "@/store/verbs";
 import { useErrorsStore } from "@/store/errors";
+import { useRoute } from 'vue-router';
+import { computed } from "vue";
 
 export default {
   name: "App",
   setup() {
     let verbStore = useVerbsStore();
     let errorStore = useErrorsStore();
+
+    const route = useRoute();
+    const isLogoClickable = computed(() => route.path !== '/choose-level');
 
     function passingToHome() {
       verbStore.$reset();
@@ -179,6 +185,7 @@ export default {
     }
     return {
       passingToHome,
+      isLogoClickable
     };
   },
 };
@@ -204,5 +211,10 @@ export default {
 }
 .router-link-exact-active svg {
   color: #1c64f2;
+}
+
+.disabled{
+  cursor: not-allowed;
+  pointer-events: none;
 }
 </style>
