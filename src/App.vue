@@ -57,7 +57,7 @@
           </svg>
         </button>
         <div
-          :class="{ hidden: !isMenuOpen, block: isMenuOpen }"
+          :class="{ hidden: isMenuOpen === false, block: isMenuOpen === true }"
           class="w-full md:block md:w-auto"
           id="navbar-default"
         >
