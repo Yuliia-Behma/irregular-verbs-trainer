@@ -1,11 +1,10 @@
 const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
   transpileDependencies: true,
-  configureWebpack: {
-    plugins: [
-      new (require('html-webpack-plugin'))({
-        title: 'Iregular verbs trainer'
-      })
-    ]
+  chainWebpack: config => {
+    config.plugin('html').tap(args => {
+      args[0].title = 'VerbFit trainer';  // Змініть на бажану назву вашого додатку
+      return args;
+    });
   }
 })
