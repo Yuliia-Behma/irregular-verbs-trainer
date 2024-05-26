@@ -145,7 +145,13 @@
         <button
           type="button"
           @click="checkAnswer"
-          class="text-white grow w-full bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-6 py-3.5 text-center inline-flex justify-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          :disabled="isButtonDisabled"
+          class="text-white grow w-full hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-6 py-3.5 text-center inline-flex justify-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          :class="{
+            'bg-blue-700': isButtonDisabled === false,
+            'cursor-not-allowed': isButtonDisabled === true,
+            'bg-blue-400': isButtonDisabled === true
+          }"
         >
           <svg
             class="w-6 h-6 me-2 text-white dark:text-white"
@@ -211,6 +217,7 @@ export default defineComponent({
     const currentLevel = ref(props.level);
 
     const progress = ref("0%");
+    let isButtonDisabled = ref(false);
 
     onBeforeMount(() => {
       console.log(currentLevel.value);
@@ -245,10 +252,11 @@ export default defineComponent({
     }
 
     function checkAnswer() {
-      calculateProgress(index.value)
+      calculateProgress(index.value);
+      isButtonDisabled.value = true;
       if (answer.value == currentWord.value[currentFormForComparison.value]) {
         isAnswer.value = true;
-        // console.log(isAnswer.value);
+        console.log(isAnswer.value);
         setTimeout(() => {
           isAnswer.value = null;
           if (index.value == verbsStore.currentVerbs.length - 1) {
@@ -259,11 +267,12 @@ export default defineComponent({
             answer.value = "";
             currentWord.value = verbsStore.currentVerbs[index.value];
             identifyForm();
+            isButtonDisabled.value = false;
           }
         }, 2000);
       } else {
         isAnswer.value = false;
-        // console.log(isAnswer.value);
+        console.log(isAnswer.value);
         const errorObj = {
           "base form": currentWord.value["base form"],
           "comparison form": currentFormForComparison.value,
@@ -271,7 +280,7 @@ export default defineComponent({
           "correct answer": currentWord.value[currentFormForComparison.value],
         };
         errorsStore.addError(errorObj);
-        // console.log(errorsStore.errorsArray);
+        console.log(errorsStore.errorsArray);
         // console.log(verbsStore.currentVerbs.length);
         setTimeout(() => {
           isAnswer.value = null;
@@ -283,6 +292,7 @@ export default defineComponent({
             answer.value = "";
             currentWord.value = verbsStore.currentVerbs[index.value];
             identifyForm();
+            isButtonDisabled.value = false;
           }
         }, 2000);
       }
@@ -306,6 +316,7 @@ export default defineComponent({
       checkAnswer,
       progress,
       calculateProgress,
+      isButtonDisabled,
     };
   },
 });
