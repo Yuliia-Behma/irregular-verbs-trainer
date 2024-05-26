@@ -111,6 +111,7 @@ export default {
 <style scoped>
 .tableWraper {
   height: calc(100% - 86px);
+  min-height: 265px;
   scrollbar-width: thin;
 }
 

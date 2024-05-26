@@ -177,6 +177,7 @@ export default {
 <style scoped>
 .tableWraper {
   height: calc(100% - 120px);
+  min-height: 296px;
   scrollbar-width: thin;
 }
 tbody > :nth-child(even) {
