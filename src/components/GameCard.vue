@@ -33,22 +33,28 @@
         type="text"
         id="answer"
         v-model.trim="answer"
-        @input="() => (answer = answer.toLowerCase())"
+        @input="validateInput"
         autocomplete="off"
         maxlength="15"
         lang="en"
-        class="bg-gray-50 border font-medium border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-3.5 px-4 placeholder-gray-500 placehoder:font-normal dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        class="border font-medium text-base rounded-lg block w-full py-3.5 px-4 placeholder-gray-500 placehoder:font-normal dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
         :class="{
-          'bg-red-50': isAnswer === false,
-          'border-red-500': isAnswer === false,
-          'focus:border-red-500': isAnswer === false,
-          'focus:ring-red-500': isAnswer === false,
-          'text-red-700': isAnswer === false,
+          'bg-gray-50': isValid===true,
+          'border-gray-300': isValid===true,
+          'focus:border-blue-500': isValid===true,
+          'focus:ring-blue-500': isValid===true,
+          'text-gray-900': isValid===true,
+          'bg-red-50':  isValid === false || isAnswer === false,
+          'border-red-500': isAnswer === false || isValid === false,
+          'focus:border-red-500': isAnswer === false || isValid === false,
+          'focus:ring-red-500': isAnswer === false || isValid === false,
+          'text-red-700': isAnswer === false || isValid === false,
           'bg-green-50': isAnswer,
           'border-green-500': isAnswer,
           'text-green-700': isAnswer,
           'focus:border-green-500': isAnswer,
           'focus:ring-green-500': isAnswer,
+          
         }"
         placeholder="Your answer"
       />
@@ -77,11 +83,9 @@
         >
           Write the answer and push "Check"
         </p>
-        <p
-          v-if="!isValid"
-          class="text-sm text-red-500 dark:text-white mt-2"
-        >
-          Write the answer and push "Check"
+        <p v-if="!isValid" class="text-sm text-red-500 dark:text-white mt-2">
+          The answer should contain only lowercase English letters and
+          optionally the '/' character.
         </p>
       </div>
     </div>
@@ -157,7 +161,7 @@
           :class="{
             'bg-blue-700': isButtonDisabled === false,
             'cursor-not-allowed': isButtonDisabled === true,
-            'bg-blue-400': isButtonDisabled === true
+            'bg-blue-400': isButtonDisabled === true,
           }"
         >
           <svg
@@ -226,6 +230,7 @@ export default defineComponent({
     const progress = ref("0%");
     let isButtonDisabled = ref(false);
     let isValid = ref(true);
+    const regexForInput = /^[a-z/]*$/;
 
     onBeforeMount(() => {
       console.log(currentLevel.value);
@@ -313,6 +318,12 @@ export default defineComponent({
       errorsStore.$reset();
     }
 
+    function validateInput() {
+      answer.value = answer.value.toLowerCase();
+      isValid.value = regexForInput.test(answer.value);
+      isButtonDisabled.value = isValid.value ? false : true;
+    }
+
     return {
       verbsStore,
       currentWord,
@@ -325,7 +336,8 @@ export default defineComponent({
       progress,
       calculateProgress,
       isButtonDisabled,
-      isValid
+      isValid,
+      validateInput,
     };
   },
 });
