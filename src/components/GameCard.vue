@@ -8,7 +8,7 @@
       <div
         class="mb-1 font-medium text-gray-500 dark:text-gray-500 text-right text-xs mt-6"
       >
-        {{ calculateProgress(index) }}
+        {{ progress }}
       </div>
       <div class="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700">
         <div
@@ -210,7 +210,7 @@ export default defineComponent({
     const currentFormForComparison = ref("");
     const currentLevel = ref(props.level);
 
-    const progress = ref("");
+    const progress = ref("0%");
 
     onBeforeMount(() => {
       console.log(currentLevel.value);
@@ -223,7 +223,7 @@ export default defineComponent({
       let percent = (index + 1) / 0.2;
       percent += "%";
       progress.value = percent;
-      return percent;
+      return progress;
     }
 
     function randomNumber(min, max) {
@@ -245,6 +245,7 @@ export default defineComponent({
     }
 
     function checkAnswer() {
+      calculateProgress(index.value)
       if (answer.value == currentWord.value[currentFormForComparison.value]) {
         isAnswer.value = true;
         // console.log(isAnswer.value);
