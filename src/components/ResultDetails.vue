@@ -1,6 +1,6 @@
 <template>
   <div
-    class="wraper px-6 pb-4 pt-6 flex flex-col justify-between w-full max-w-lg my-0 mx-auto relative"
+    class="wraper px-6 pb-4 pt-6 flex flex-col justify-between w-full max-w-lg my-0 mx-auto relative overflow-y-auto"
   >
     <button
       type="button"

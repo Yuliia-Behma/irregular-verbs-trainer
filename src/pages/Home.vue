@@ -8,7 +8,7 @@ function passing() {
 
 <template>
   <div
-    class="wraper flex flex-col w-full max-w-md justify-between my-0 mx-auto"
+    class="wraper flex flex-col w-full max-w-md justify-between my-0 mx-auto overflow-y-auto"
   >
     <div class="px-6 pt-10">
       <h3 class="text-2xl text-gray-900 font-bold dark:text-white pb-3 pt-2">

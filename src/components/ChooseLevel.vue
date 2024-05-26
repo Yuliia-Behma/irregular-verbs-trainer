@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="!allow"
-    class="wraper px-6 flex flex-col justify-between w-full max-w-md my-0 mx-auto"
+    class="wraper px-6 flex flex-col justify-between w-full max-w-md my-0 mx-auto overflow-y-auto"
     @keyup.enter="startGameBtn"
   >
     <div>

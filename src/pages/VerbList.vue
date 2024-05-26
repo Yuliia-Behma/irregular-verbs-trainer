@@ -1,6 +1,6 @@
 <template>
   <div
-    class="wraper px-6 pb-4 pt-6 flex flex-col justify-start w-full max-w-md my-0 mx-auto relative"
+    class="wraper px-6 pb-4 pt-6 flex flex-col justify-start w-full max-w-md my-0 mx-auto relative overflow-y-auto"
   >
     <div class="flex flex-row justify-between items-baseline">
       <h3 class="text-2xl text-gray-900 font-bold dark:text-white pb-0 pt-2">

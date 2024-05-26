@@ -1,6 +1,6 @@
 <template>
   <div
-    class="wraper flex flex-col w-full max-w-md justify-between my-0 mx-auto px-6 pt-6 pb-4"
+    class="wraper flex flex-col w-full max-w-md justify-between my-0 mx-auto px-6 pt-6 pb-4 overflow-y-auto"
   >
     <div>
       <p
