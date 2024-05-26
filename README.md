@@ -1,4 +1,4 @@
-# irregular-vord-trainer
+# irregular-verbs-trainer
 
 ## Project setup
 ```
