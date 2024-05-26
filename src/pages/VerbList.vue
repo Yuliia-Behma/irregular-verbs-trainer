@@ -73,17 +73,31 @@ export default {
   name: "VerbList",
   setup() {
     const list = ref(json.hard);
+    let sortToggle = ref(true);
 
     function sortList() {
-      list.value.sort((a, b) => {
-        if (a["base form"] > b["base form"]) {
-          return 1;
-        }
-        if (a["base form"] < b["base form"]) {
-          return -1;
-        }
-        return 0;
-      });
+      if (sortToggle.value) {
+        list.value.sort((a, b) => {
+          if (a["base form"] > b["base form"]) {
+            return 1;
+          }
+          if (a["base form"] < b["base form"]) {
+            return -1;
+          }
+          return 0;
+        });
+      } else {
+        list.value.sort((a, b) => {
+          if (a["base form"] < b["base form"]) {
+            return 1;
+          }
+          if (a["base form"] > b["base form"]) {
+            return -1;
+          }
+          return 0;
+        });
+      }
+      sortToggle.value = !sortToggle.value;
     }
 
     return {
