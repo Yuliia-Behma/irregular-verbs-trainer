@@ -9,7 +9,7 @@
         <div
           class="flex items-center space-x-3 rtl:space-x-reverse"
           @click="passingToHome"
-          :class="{ disabled: isLogoClickable === false}"
+          :class="{ disabled: isLogoClickable === false }"
         >
           <svg
             class="w-[32px] h-[32px] text-gray-800 dark:text-white"
@@ -32,6 +32,7 @@
         </div>
         <button
           id="triggerEl"
+          @click="toggleMenu"
           data-collapse-toggle="navbar-default"
           type="button"
           class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-900 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -55,12 +56,17 @@
             />
           </svg>
         </button>
-        <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <div
+          :class="{ hidden: !isMenuOpen, block: isMenuOpen }"
+          class="w-full md:block md:w-auto"
+          id="navbar-default"
+        >
           <ul
             class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
           >
             <li>
               <RouterLink
+                @click="closeMenu"
                 to="/"
                 class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 aria-current="page"
@@ -69,6 +75,7 @@
             </li>
             <li>
               <RouterLink
+                @click="closeMenu"
                 to="/rules"
                 class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >Rules</RouterLink
@@ -76,6 +83,7 @@
             </li>
             <li>
               <RouterLink
+                @click="closeMenu"
                 to="/verbs-list"
                 class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >Catalog</RouterLink
@@ -166,8 +174,9 @@
 import router from "@/router";
 import { useVerbsStore } from "@/store/verbs";
 import { useErrorsStore } from "@/store/errors";
-import { useRoute } from 'vue-router';
+import { useRoute } from "vue-router";
 import { computed } from "vue";
+import { ref } from "vue";
 
 export default {
   name: "App",
@@ -176,7 +185,15 @@ export default {
     let errorStore = useErrorsStore();
 
     const route = useRoute();
-    const isLogoClickable = computed(() => route.path !== '/choose-level');
+    const isLogoClickable = computed(() => route.path !== "/choose-level");
+
+    const isMenuOpen = ref(false);
+    let toggleMenu = () => {
+      isMenuOpen.value = !isMenuOpen.value;
+    };
+    let closeMenu = () => {
+      isMenuOpen.value = false;
+    };
 
     function passingToHome() {
       verbStore.$reset();
@@ -185,7 +202,10 @@ export default {
     }
     return {
       passingToHome,
-      isLogoClickable
+      isLogoClickable,
+      isMenuOpen,
+      toggleMenu,
+      closeMenu,
     };
   },
 };
@@ -201,10 +221,10 @@ export default {
 .wraper {
   height: calc(100vh - 64px - 90px);
 }
-@media (max-width: 468px){
+@media (max-width: 468px) {
   .wraper {
-  height: calc(100vh - 64px - 90px - 34px - 49px);
-}
+    height: calc(100vh - 64px - 90px - 34px - 49px);
+  }
 }
 .router-link-active span {
   color: #1c64f2;
@@ -213,7 +233,7 @@ export default {
   color: #1c64f2;
 }
 
-.disabled{
+.disabled {
   cursor: not-allowed;
   pointer-events: none;
 }
