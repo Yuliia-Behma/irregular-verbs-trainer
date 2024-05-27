@@ -39,12 +39,12 @@
         lang="en"
         class="border font-medium text-base rounded-lg block w-full py-3.5 px-4 placeholder-gray-500 placehoder:font-normal dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
         :class="{
-          'bg-gray-50': isValid===true,
-          'border-gray-300': isValid===true,
-          'focus:border-blue-500': isValid===true,
-          'focus:ring-blue-500': isValid===true,
-          'text-gray-900': isValid===true,
-          'bg-red-50':  isValid === false || isAnswer === false,
+          'bg-gray-50': isValid === true,
+          'border-gray-300': isValid === true,
+          'focus:border-blue-500': isValid === true,
+          'focus:ring-blue-500': isValid === true,
+          'text-gray-900': isValid === true,
+          'bg-red-50': isValid === false || isAnswer === false,
           'border-red-500': isAnswer === false || isValid === false,
           'focus:border-red-500': isAnswer === false || isValid === false,
           'focus:ring-red-500': isAnswer === false || isValid === false,
@@ -54,7 +54,6 @@
           'text-green-700': isAnswer,
           'focus:border-green-500': isAnswer,
           'focus:ring-green-500': isAnswer,
-          
         }"
         placeholder="Your answer"
       />
@@ -94,42 +93,45 @@
       <video
         v-if="isAnswer === true"
         class="place-self-center"
-        loading="lazy"
-        muted="muted"
-        autoplay="autoplay"
+        muted
+        autoplay
         type="video/mp4"
-        loop="loop"
+        loop
         width="224"
         height="224"
+        playsinline
+        webkit-playsinline
         src="../assets/video/answerTrue.mp4"
       ></video>
       <video
         v-else-if="isAnswer === false"
         class="place-self-center"
-        loading="lazy"
-        muted="muted"
-        autoplay="autoplay"
+        muted
+        autoplay
         type="video/mp4"
-        loop="loop"
+        loop
         width="224"
         height="224"
+        playsinline
+        webkit-playsinline
         src="../assets/video/answerFalse.mp4"
       ></video>
       <video
         v-else
         class="place-self-center"
-        loading="lazy"
-        muted="muted"
-        autoplay="autoplay"
+        muted
+        autoplay
         type="video/mp4"
-        loop="loop"
+        loop
         width="224"
         height="224"
+        playsinline
+        webkit-playsinline
         src="../assets/video/laptopCat.mp4"
       ></video>
 
       <div class="pb-4 flex">
-        <button
+        <!-- <button
           type="button"
           @click="restartGame"
           class="text-blue-700 flex-none border border-blue-700 py-3.5 px-6 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm text-center inline-flex items-center me-4 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800 dark:hover:bg-blue-500"
@@ -151,7 +153,7 @@
               d="M17.651 7.65a7.131 7.131 0 0 0-12.68 3.15M18.001 4v4h-4m-7.652 8.35a7.13 7.13 0 0 0 12.68-3.15M6 20v-4h4"
             />
           </svg>
-        </button>
+        </button> -->
 
         <button
           type="button"
@@ -343,4 +345,8 @@ export default defineComponent({
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+video {
+  pointer-events: none;
+}
+</style>

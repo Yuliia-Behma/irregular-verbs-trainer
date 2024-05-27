@@ -26,37 +26,40 @@
     <video
       v-if="score === 100"
       class="mb-1 place-self-center"
-      loading="lazy"
-      muted="muted"
-      autoplay="autoplay"
+      muted
+      autoplay
       type="video/mp4"
-      loop="loop"
+      loop
       width="224"
       height="224"
+      playsinline
+      webkit-playsinline
       src="../assets/video/excellent.mp4"
     ></video>
     <video
       v-else-if="score < 100 && score > 70"
       class="mb-1 place-self-center"
-      loading="lazy"
-      muted="muted"
-      autoplay="autoplay"
+      muted
+      autoplay
       type="video/mp4"
-      loop="loop"
+      loop
       width="224"
       height="224"
+      playsinline
+      webkit-playsinline
       src="../assets/video/green.mp4"
     ></video>
     <video
       v-else-if="color === 'orange' || color === 'red'"
       class="mb-1 place-self-center"
-      loading="lazy"
-      muted="muted"
-      autoplay="autoplay"
+      muted
+      autoplay
       type="video/mp4"
-      loop="loop"
+      loop
       width="224"
       height="224"
+      playsinline
+      webkit-playsinline
       src="../assets/video/redOrange.mp4"
     ></video>
 
@@ -183,4 +186,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+video {
+  pointer-events: none;
+}
+</style>

@@ -58,4 +58,8 @@ function passing() {
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+video {
+  pointer-events: none;
+}
+</style>
