@@ -23,15 +23,16 @@ function passing() {
       </p>
     </div>
     <video
-      loading="lazy"
       class="self-center"
-      muted="muted"
+      muted
       src="../assets/video/greetings.mp4"
       type="video/mp4"
-      autoplay="autoplay"
-      loop="loop"
+      autoplay
+      loop
       width="224"
       height="224"
+      playsinline
+      webkit-playsinline
     ></video>
     <div class="flex flex-col items-center px-6">
       <button
