@@ -95,7 +95,7 @@
     <main class="main">
       <RouterView></RouterView>
     </main>
-    <footer
+    <footer  ref="footer"
       class="fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600"
     >
       <div class="grid h-full max-w-lg grid-cols-3 mx-auto font-medium">
@@ -176,7 +176,7 @@ import { useVerbsStore } from "@/store/verbs";
 import { useErrorsStore } from "@/store/errors";
 import { useRoute } from "vue-router";
 import { computed } from "vue";
-import { ref } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 
 export default {
   name: "App",
@@ -200,12 +200,31 @@ export default {
       errorStore.$reset();
       router.replace("/");
     }
+    const footer = ref(null);
+    const footerHeight = ref('64px');
+
+    const updateFooterHeight = () => {
+      if (footer.value) {
+        footerHeight.value = `${footer.value.offsetHeight}px`;
+        document.documentElement.style.setProperty('--footer-height', footerHeight.value);
+      }
+    };
+    onMounted(() => {
+      updateFooterHeight();
+      window.addEventListener('resize', updateFooterHeight);
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener('resize', updateFooterHeight);
+    });
     return {
       passingToHome,
       isLogoClickable,
       isMenuOpen,
       toggleMenu,
       closeMenu,
+      footer,
+      footerHeight
     };
   },
 };
@@ -234,6 +253,10 @@ export default {
   pointer-events: none;
 }
 
+:root {
+  --footer-height: 64px;
+}
+
 .page {
   margin: 0;
   display: flex;
@@ -249,6 +272,6 @@ header{
   flex: 1;
   overflow-y: auto;
   flex: 1;
-  padding-bottom: 64px;
+  padding-bottom: var(--footer-height);
 }
 </style>
