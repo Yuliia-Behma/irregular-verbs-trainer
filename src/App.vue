@@ -201,29 +201,34 @@ export default {
       errorStore.$reset();
       router.replace("/");
     }
-    const footer = ref(null);
-    const footerHeight = ref("64px");
+    // const footer = ref(null);
+    let screenHeight = ref("100%");
 
-    const updateFooterHeight = () => {
-      if (footer.value) {
-        const screenHeight = window.innerHeight;
+    const updateScreenHeight = () => {
+
+        screenHeight.value = window.innerHeight + 'px';
+        console.log(screenHeight.value)
         // const height = footer.value.getBoundingClientRect().height;
-        const footerTop = footer.value.getBoundingClientRect().top;
-        const distanceFromBottom = screenHeight - footerTop;
-        footerHeight.value = `${distanceFromBottom}px`;
+        // const footerTop = footer.value.getBoundingClientRect().top;
+        // const distanceFromBottom = screenHeight - footerTop;
+        // footerHeight.value = `${distanceFromBottom}px`;
+        // console.log(footerHeight.value)
+        // document.documentElement.style.setProperty(
+        //   "--footer-height",
+        //   footerHeight.value
+        // );
         document.documentElement.style.setProperty(
-          "--footer-height",
-          footerHeight.value
+          "--screen-height",
+          screenHeight.value
         );
-      }
     };
     onMounted(() => {
-      updateFooterHeight();
-      window.addEventListener("resize", updateFooterHeight);
+      updateScreenHeight();
+      window.addEventListener("resize", updateScreenHeight);
     });
 
     onUnmounted(() => {
-      window.removeEventListener("resize", updateFooterHeight);
+      window.removeEventListener("resize", updateScreenHeight);
     });
     return {
       passingToHome,
@@ -231,8 +236,7 @@ export default {
       isMenuOpen,
       toggleMenu,
       closeMenu,
-      footer,
-      footerHeight,
+      screenHeight
     };
   },
 };
@@ -262,9 +266,14 @@ export default {
 }
 
 :root {
-  --footer-height: 64px;
+  /* --footer-height: 64px; */
+  --screen-height: 100%;
 }
-
+html, body, #app{
+  height: var(--screen-height);
+  margin: 0;
+  padding: 0;
+}
 .page {
   margin: 0;
   display: flex;
@@ -280,6 +289,7 @@ header {
   flex: 1;
   overflow-y: auto;
   flex: 1;
-  padding-bottom: var(--footer-height);
+  /* padding-bottom: var(--footer-height); */
+  padding-bottom: 64px;
 }
 </style>
