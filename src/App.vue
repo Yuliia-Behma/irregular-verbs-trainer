@@ -270,7 +270,7 @@ export default {
   --screen-height: 100%;
 }
 html, body, #app{
-  height: var(--screen-height);
+
   margin: 0;
   padding: 0;
 }
@@ -278,7 +278,7 @@ html, body, #app{
   margin: 0;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: var(--screen-height);
   overflow: hidden;
 }
 header {
