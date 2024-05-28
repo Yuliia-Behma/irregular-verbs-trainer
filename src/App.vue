@@ -239,6 +239,7 @@ export default {
 }
 .wraper {
   height: 100;
+  scrollbar-width: thin;
 }
 
 .router-link-active span {
