@@ -96,7 +96,7 @@
       <RouterView></RouterView>
     </main>
     <footer
-      class="z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600"
+      class="fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600"
     >
       <div class="grid h-full max-w-lg grid-cols-3 mx-auto font-medium">
         <RouterLink
@@ -239,12 +239,16 @@ export default {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  overflow: hidden;
 }
-
+header{
+  flex-shrink: 0;
+}
 .main {
   display: flex;
   flex: 1;
   overflow-y: auto;
   flex: 1;
+  padding-bottom: 64px;
 }
 </style>
