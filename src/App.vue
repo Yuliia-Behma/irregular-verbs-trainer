@@ -95,7 +95,8 @@
     <main class="main">
       <RouterView></RouterView>
     </main>
-    <footer  ref="footer"
+    <footer
+      ref="footer"
       class="fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600"
     >
       <div class="grid h-full max-w-lg grid-cols-3 mx-auto font-medium">
@@ -201,21 +202,28 @@ export default {
       router.replace("/");
     }
     const footer = ref(null);
-    const footerHeight = ref('64px');
+    const footerHeight = ref("64px");
 
     const updateFooterHeight = () => {
       if (footer.value) {
-        footerHeight.value = `${footer.value.offsetHeight}px`;
-        document.documentElement.style.setProperty('--footer-height', footerHeight.value);
+        const screenHeight = window.innerHeight;
+        // const height = footer.value.getBoundingClientRect().height;
+        const footerTop = footer.value.getBoundingClientRect().top;
+        const distanceFromBottom = screenHeight - footerTop;
+        footerHeight.value = `${distanceFromBottom}px`;
+        document.documentElement.style.setProperty(
+          "--footer-height",
+          footerHeight.value
+        );
       }
     };
     onMounted(() => {
       updateFooterHeight();
-      window.addEventListener('resize', updateFooterHeight);
+      window.addEventListener("resize", updateFooterHeight);
     });
 
     onUnmounted(() => {
-      window.removeEventListener('resize', updateFooterHeight);
+      window.removeEventListener("resize", updateFooterHeight);
     });
     return {
       passingToHome,
@@ -224,7 +232,7 @@ export default {
       toggleMenu,
       closeMenu,
       footer,
-      footerHeight
+      footerHeight,
     };
   },
 };
@@ -264,7 +272,7 @@ export default {
   height: 100vh;
   overflow: hidden;
 }
-header{
+header {
   flex-shrink: 0;
 }
 .main {
