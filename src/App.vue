@@ -96,7 +96,6 @@
       <RouterView></RouterView>
     </main>
     <footer
-      ref="footer"
       class="fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600"
     >
       <div class="grid h-full max-w-lg grid-cols-3 mx-auto font-medium">
@@ -201,22 +200,11 @@ export default {
       errorStore.$reset();
       router.replace("/");
     }
-    // const footer = ref(null);
     let screenHeight = ref("100%");
 
     const updateScreenHeight = () => {
-
         screenHeight.value = window.innerHeight + 'px';
-        console.log(screenHeight.value)
-        // const height = footer.value.getBoundingClientRect().height;
-        // const footerTop = footer.value.getBoundingClientRect().top;
-        // const distanceFromBottom = screenHeight - footerTop;
-        // footerHeight.value = `${distanceFromBottom}px`;
-        // console.log(footerHeight.value)
-        // document.documentElement.style.setProperty(
-        //   "--footer-height",
-        //   footerHeight.value
-        // );
+        // console.log(screenHeight.value)
         document.documentElement.style.setProperty(
           "--screen-height",
           screenHeight.value
@@ -266,7 +254,6 @@ export default {
 }
 
 :root {
-  /* --footer-height: 64px; */
   --screen-height: 100%;
 }
 html, body, #app{
@@ -289,7 +276,6 @@ header {
   flex: 1;
   overflow-y: auto;
   flex: 1;
-  /* padding-bottom: var(--footer-height); */
   padding-bottom: 64px;
 }
 </style>
