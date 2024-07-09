@@ -1,36 +1,45 @@
 import { defineStore } from "pinia";
+import { ref } from "vue";
 
-export const useErrorsStore = defineStore({
-  id: "errors",
-  state: () => ({
-    errorsArray: [],
-    countOfMistakes: 0,
-    score: 0,
-    message: "",
-    color: "",
-  }),
-  actions: {
-    addError(err) {
-      this.errorsArray.push(err);
-    },
-    getAllValues() {
-      this.countOfMistakes = this.errorsArray.length;
-      // 5 - відсоток 1 помилки
-      this.score = 100 - this.countOfMistakes * 5;
+export const useErrorsStore = defineStore("errors", () => {
+  const errorsArray = ref([]);
+  const countOfMistakes = ref(0);
+  const score = ref(0);
+  const message = ref("");
+  const color = ref("");
 
-      if (this.score === 100) {
-        this.message = "Excellent!";
-        this.color = "green";
-      } else if (this.score < 100 && this.score > 70) {
-        this.message = "Good job!";
-        this.color = "green";
-      } else if (this.score <= 70 && this.score > 30) {
-        this.message = "You can do better!";
-        this.color = "orange";
-      } else {
-        this.message = "Do not upset the Cat, practice more!";
-        this.color = "red";
-      }
-    },
-  },
+  const addError = (err) => {
+    errorsArray.value.push(err);
+  };
+
+  const getAllValues = () => {
+    countOfMistakes.value = errorsArray.value.length;
+    // 5 - відсоток 1 помилки
+    score.value = 100 - countOfMistakes.value * 5;
+
+    if (score.value === 100) {
+      message.value = "Excellent!";
+      color.value = "green";
+    } else if (score.value < 100 && score.value > 70) {
+      message.value = "Good job!";
+      color.value = "green";
+    } else if (score.value <= 70 && score.value > 30) {
+      message.value = "You can do better!";
+      color.value = "orange";
+    } else {
+      message.value = "Do not upset the Cat, practice more!";
+      color.value = "red";
+    }
+  }
+
+  const $reset = () => {
+    errorsArray.value = [];
+    countOfMistakes.value = 0;
+    score.value = 0;
+    message.value = "";
+    color.value = "";
+  }
+
+  return {errorsArray, countOfMistakes, score, message, color, addError, getAllValues, $reset}
 });
+

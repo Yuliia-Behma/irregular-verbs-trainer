@@ -1,3 +1,34 @@
+<script setup>
+import { onMounted, ref } from "vue";
+import { useErrorsStore } from "@/store/errors";
+import router from "@/router";
+
+const currentCountOfMistakes = ref(0);
+const errorsArray = ref([]);
+const score = ref(0);
+const message = ref("");
+const color = ref("");
+const errorStore = useErrorsStore();
+
+onMounted(() => {
+  errorsArray.value = errorStore.errorsArray;
+  errorStore.getAllValues();
+  currentCountOfMistakes.value = errorStore.countOfMistakes;
+  score.value = errorStore.score;
+  message.value = errorStore.message;
+  color.value = errorStore.color;
+});
+
+function restartGame() {
+  errorStore.$reset();
+  router.replace("/choose-level");
+}
+
+function showDetails() {
+  router.replace("/result-details");
+}
+</script>
+
 <template>
   <div
     class="wraper flex flex-col w-full max-w-md justify-between my-0 mx-auto px-6 pt-6 pb-4 overflow-y-auto"
@@ -133,58 +164,6 @@
     </div>
   </div>
 </template>
-
-<script>
-import { onMounted, ref } from "vue";
-import { useErrorsStore } from "@/store/errors";
-import router from "@/router";
-
-export default {
-  name: "Result",
-
-  setup() {
-    let currentCountOfMistakes = ref(0);
-    let errorsArray = ref([]);
-    let errorStore;
-    let score = ref(0);
-    let message = ref("");
-    let color = ref("");
-
-    onMounted(() => {
-      errorStore = useErrorsStore();
-      // console.log(errorStore);
-      errorsArray.value = errorStore.errorsArray;
-      // console.log(errorsArray.value);
-      errorStore.getAllValues();
-      currentCountOfMistakes.value = errorStore.countOfMistakes;
-      // console.log(currentCountOfMistakes);
-      // 5 - відсоток 1 помилки
-      score.value = errorStore.score;
-      message.value = errorStore.message;
-      color.value = errorStore.color;
-    });
-
-    function restartGame() {
-      errorStore.$reset();
-      router.replace("/choose-level");
-    }
-
-    function showDetails() {
-      router.replace("/result-details");
-    }
-
-    return {
-      currentCountOfMistakes,
-      errorsArray,
-      score,
-      message,
-      color,
-      restartGame,
-      showDetails,
-    };
-  },
-};
-</script>
 
 <style scoped>
 video {

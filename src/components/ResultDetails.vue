@@ -1,3 +1,32 @@
+<script setup>
+import { onMounted, ref } from "vue";
+import { useErrorsStore } from "@/store/errors";
+import router from "@/router";
+
+const errorStore = useErrorsStore();
+const errorsArray = ref([]);
+const countOfMistakes = ref(0);
+const score = ref(0);
+const color = ref("");
+
+onMounted(() => {
+  errorsArray.value = errorStore.errorsArray;
+  errorStore.getAllValues();
+  countOfMistakes.value = errorStore.countOfMistakes;
+  score.value = errorStore.score;
+  color.value = errorStore.color;
+});
+
+const restartGame = () => {
+  errorStore.$reset();
+  router.replace("/choose-level");
+};
+
+const comeBack = () => {
+  router.replace("/results");
+};
+</script>
+
 <template>
   <div
     class="wraper px-6 pb-4 pt-6 flex flex-col justify-between w-full max-w-lg my-0 mx-auto relative overflow-y-auto"
@@ -125,54 +154,6 @@
     </button>
   </div>
 </template>
-
-<script>
-import { onMounted, ref } from "vue";
-import { useErrorsStore } from "@/store/errors";
-import router from "@/router";
-
-export default {
-  name: "Result",
-
-  setup() {
-    let errorStore;
-    let errorsArray = ref([]);
-    let countOfMistakes = ref(0);
-    let score = ref(0);
-    let color = ref("");
-
-    onMounted(() => {
-      errorStore = useErrorsStore();
-      // console.log(errorStore);
-      errorsArray.value = errorStore.errorsArray;
-      // console.log(errorsArray.value);
-      errorStore.getAllValues();
-      countOfMistakes.value = errorStore.countOfMistakes;
-      score.value = errorStore.score;
-      color.value = errorStore.color;
-    });
-
-    function restartGame() {
-      errorStore.$reset();
-      router.replace("/choose-level");
-    }
-
-    function comeBack() {
-      router.replace("/results");
-    }
-
-    return {
-      countOfMistakes,
-      errorsArray,
-      errorStore,
-      restartGame,
-      score,
-      color,
-      comeBack,
-    };
-  },
-};
-</script>
 
 <style scoped>
 .tableWraper {
