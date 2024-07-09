@@ -1,7 +1,7 @@
 <script setup>
 import router from "@/router";
 
-function passing() {
+const passing = () => {
   router.replace("/choose-level");
 }
 </script>

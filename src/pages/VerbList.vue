@@ -1,3 +1,36 @@
+<script setup>
+import json from "../jsonData/verbsData.json";
+import { ref } from "vue";
+
+const list = ref(json.hard);
+const sortToggle = ref(true);
+
+const sortList = () => {
+  if (sortToggle.value) {
+    list.value.sort((a, b) => {
+      if (a["base form"] > b["base form"]) {
+        return 1;
+      }
+      if (a["base form"] < b["base form"]) {
+        return -1;
+      }
+      return 0;
+    });
+  } else {
+    list.value.sort((a, b) => {
+      if (a["base form"] < b["base form"]) {
+        return 1;
+      }
+      if (a["base form"] > b["base form"]) {
+        return -1;
+      }
+      return 0;
+    });
+  }
+  sortToggle.value = !sortToggle.value;
+};
+</script>
+
 <template>
   <div
     class="wraper px-6 pb-4 pt-6 flex flex-col justify-start w-full max-w-md my-0 mx-auto relative overflow-y-auto"
@@ -64,49 +97,6 @@
     </div>
   </div>
 </template>
-
-<script>
-import json from "../jsonData/verbsData.json";
-import { ref } from "vue";
-
-export default {
-  name: "VerbList",
-  setup() {
-    const list = ref(json.hard);
-    let sortToggle = ref(true);
-
-    function sortList() {
-      if (sortToggle.value) {
-        list.value.sort((a, b) => {
-          if (a["base form"] > b["base form"]) {
-            return 1;
-          }
-          if (a["base form"] < b["base form"]) {
-            return -1;
-          }
-          return 0;
-        });
-      } else {
-        list.value.sort((a, b) => {
-          if (a["base form"] < b["base form"]) {
-            return 1;
-          }
-          if (a["base form"] > b["base form"]) {
-            return -1;
-          }
-          return 0;
-        });
-      }
-      sortToggle.value = !sortToggle.value;
-    }
-
-    return {
-      list,
-      sortList,
-    };
-  },
-};
-</script>
 
 <style scoped>
 .tableWraper {

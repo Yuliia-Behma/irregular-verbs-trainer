@@ -1,3 +1,49 @@
+<script setup>
+import router from "@/router";
+import { useVerbsStore } from "@/store/verbs";
+import { useErrorsStore } from "@/store/errors";
+import { useRoute } from "vue-router";
+import { computed } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
+
+const verbStore = useVerbsStore();
+const errorStore = useErrorsStore();
+const route = useRoute();
+const isLogoClickable = computed(() => route.path !== "/choose-level");
+const screenHeight = ref("100%");
+const isMenuOpen = ref(false)
+
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value;
+};
+const closeMenu = () => {
+  isMenuOpen.value = false;
+};
+
+const passingToHome = () => {
+  verbStore.$reset();
+  errorStore.$reset();
+  router.replace("/");
+}
+
+const updateScreenHeight = () => {
+  screenHeight.value = window.innerHeight + "px";
+  document.documentElement.style.setProperty(
+    "--screen-height",
+    screenHeight.value
+  );
+};
+
+onMounted(() => {
+  updateScreenHeight();
+  window.addEventListener("resize", updateScreenHeight);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", updateScreenHeight);
+});
+</script>
+
 <template>
   <div class="page">
     <header>
@@ -170,66 +216,6 @@
   </div>
 </template>
 
-<script>
-import router from "@/router";
-import { useVerbsStore } from "@/store/verbs";
-import { useErrorsStore } from "@/store/errors";
-import { useRoute } from "vue-router";
-import { computed } from "vue";
-import { ref, onMounted, onUnmounted } from "vue";
-
-export default {
-  name: "App",
-  setup() {
-    let verbStore = useVerbsStore();
-    let errorStore = useErrorsStore();
-
-    const route = useRoute();
-    const isLogoClickable = computed(() => route.path !== "/choose-level");
-
-    const isMenuOpen = ref(false);
-    let toggleMenu = () => {
-      isMenuOpen.value = !isMenuOpen.value;
-    };
-    let closeMenu = () => {
-      isMenuOpen.value = false;
-    };
-
-    function passingToHome() {
-      verbStore.$reset();
-      errorStore.$reset();
-      router.replace("/");
-    }
-    let screenHeight = ref("100%");
-
-    const updateScreenHeight = () => {
-        screenHeight.value = window.innerHeight + 'px';
-        // console.log(screenHeight.value)
-        document.documentElement.style.setProperty(
-          "--screen-height",
-          screenHeight.value
-        );
-    };
-    onMounted(() => {
-      updateScreenHeight();
-      window.addEventListener("resize", updateScreenHeight);
-    });
-
-    onUnmounted(() => {
-      window.removeEventListener("resize", updateScreenHeight);
-    });
-    return {
-      passingToHome,
-      isLogoClickable,
-      isMenuOpen,
-      toggleMenu,
-      closeMenu,
-      screenHeight
-    };
-  },
-};
-</script>
-
 <style>
 .router-link-active {
   color: #1c64f2;
@@ -257,8 +243,9 @@ export default {
 :root {
   --screen-height: 100%;
 }
-html, body, #app{
-
+html,
+body,
+#app {
   margin: 0;
   padding: 0;
 }

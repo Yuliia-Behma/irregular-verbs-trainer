@@ -19,12 +19,12 @@ onMounted(() => {
   color.value = errorStore.color;
 });
 
-function restartGame() {
+const restartGame = () => {
   errorStore.$reset();
   router.replace("/choose-level");
 }
 
-function showDetails() {
+const showDetails = () => {
   router.replace("/result-details");
 }
 </script>

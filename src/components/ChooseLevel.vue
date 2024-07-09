@@ -1,3 +1,23 @@
+<script setup>
+import { ref } from "vue";
+import GameCard from "./GameCard.vue";
+import { useErrorsStore } from "@/store/errors";
+
+const level = ref("");
+const allow = ref(false);
+const errorStore = useErrorsStore();
+
+const startGameBtn = () => {
+  errorStore.$reset();
+  allow.value = true;
+};
+
+const refresh = () => {
+  level.value = "";
+  allow.value = false;
+};
+</script>
+
 <template>
   <div
     v-if="!allow"
@@ -81,7 +101,8 @@
           fill="white"
         />
       </svg>
-      <svg v-else
+      <svg
+        v-else
         width="24"
         height="24"
         viewBox="0 0 24 24"
@@ -99,7 +120,7 @@
   <GameCard @restart="refresh" v-if="level && allow" :level="level"></GameCard>
 </template>
 
-<script>
+<!-- <script>
 import { defineComponent, ref } from "vue";
 import GameCard from "./GameCard.vue";
 import { useErrorsStore } from "@/store/errors";
@@ -131,7 +152,7 @@ export default defineComponent({
     };
   },
 });
-</script>
+</script> -->
 
 <style scoped>
 #easyLevel:checked + label {

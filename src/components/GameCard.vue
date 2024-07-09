@@ -1,3 +1,110 @@
+<script setup>
+import { ref, reactive, onBeforeMount, defineProps } from "vue";
+import router from "@/router";
+import { useVerbsStore } from "@/store/verbs";
+import { useErrorsStore } from "@/store/errors";
+
+const props = defineProps(["level"]);
+const verbsStore = useVerbsStore();
+const errorsStore = useErrorsStore();
+
+const currentWord = reactive({});
+const index = ref(0);
+const answer = ref("");
+const isAnswer = ref(null);
+const currentFormForComparison = ref("");
+// const currentLevel = ref(props.level);
+
+const progress = ref("0%");
+const isButtonDisabled = ref(false);
+const isValid = ref(true);
+const regexForInput = /^[a-z/]*$/;
+
+onBeforeMount(() => {
+  // console.log(currentLevel.value);
+  verbsStore.getCurrentGameVerbsList(props.level);
+  currentWord.value = verbsStore.currentVerbs[index.value];
+  identifyForm();
+});
+
+const calculateProgress = (index) => {
+  let percent = (index + 1) / 0.2;
+  percent += "%";
+  progress.value = percent;
+  return progress;
+};
+
+const randomNumber = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+const identifyForm = () => {
+  const num = randomNumber(1, 2);
+  if (num == 1) {
+    return (currentFormForComparison.value = "past simple");
+  } else if (num == 2) {
+    return (currentFormForComparison.value = "past participle");
+  }
+};
+
+const endGame = () => {
+  console.log("end game work");
+  router.replace("/results");
+};
+
+const checkAnswer = () => {
+  calculateProgress(index.value);
+  isButtonDisabled.value = true;
+  if (answer.value == currentWord.value[currentFormForComparison.value]) {
+    isAnswer.value = true;
+    console.log(isAnswer.value);
+    setTimeout(() => {
+      isAnswer.value = null;
+      if (index.value == verbsStore.currentVerbs.length - 1) {
+        endGame();
+        return;
+      } else if (index.value < verbsStore.currentVerbs.length - 1) {
+        index.value++;
+        answer.value = "";
+        currentWord.value = verbsStore.currentVerbs[index.value];
+        identifyForm();
+        isButtonDisabled.value = false;
+      }
+    }, 2000);
+  } else {
+    isAnswer.value = false;
+    console.log(isAnswer.value);
+    const errorObj = {
+      "base form": currentWord.value["base form"],
+      "comparison form": currentFormForComparison.value,
+      "my answer": answer.value,
+      "correct answer": currentWord.value[currentFormForComparison.value],
+    };
+    errorsStore.addError(errorObj);
+    console.log(errorsStore.errorsArray);
+    setTimeout(() => {
+      isAnswer.value = null;
+      if (index.value == verbsStore.currentVerbs.length - 1) {
+        endGame();
+        return;
+      } else if (index.value < verbsStore.currentVerbs.length - 1) {
+        index.value++;
+        answer.value = "";
+        currentWord.value = verbsStore.currentVerbs[index.value];
+        identifyForm();
+        isButtonDisabled.value = false;
+      }
+    }, 2000);
+  }
+};
+
+const validateInput = () => {
+  answer.value = answer.value.toLowerCase();
+  isValid.value = regexForInput.test(answer.value);
+  isButtonDisabled.value = isValid.value ? false : true;
+};
+</script>
+
 <template>
   <div
     class="wraper px-6 flex flex-col justify-between w-full max-w-md my-0 mx-auto overflow-y-auto"
@@ -131,30 +238,6 @@
       ></video>
 
       <div class="pb-4 flex">
-        <!-- <button
-          type="button"
-          @click="restartGame"
-          class="text-blue-700 flex-none border border-blue-700 py-3.5 px-6 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm text-center inline-flex items-center me-4 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800 dark:hover:bg-blue-500"
-        >
-          <svg
-            class="w-6 h-6 text-currentColor dark:text-white hover:text-white focus:text-white"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M17.651 7.65a7.131 7.131 0 0 0-12.68 3.15M18.001 4v4h-4m-7.652 8.35a7.13 7.13 0 0 0 12.68-3.15M6 20v-4h4"
-            />
-          </svg>
-        </button> -->
-
         <button
           type="button"
           @click="checkAnswer"
@@ -207,7 +290,7 @@
   </div>
 </template>
 
-<script>
+<!-- <script>
 import { defineComponent, ref, reactive, onBeforeMount } from "vue";
 import router from "@/router";
 import { useVerbsStore } from "@/store/verbs";
@@ -343,7 +426,7 @@ export default defineComponent({
     };
   },
 });
-</script>
+</script> -->
 
 <style scoped>
 video {

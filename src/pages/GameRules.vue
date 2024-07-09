@@ -3,10 +3,10 @@ import router from "@/router";
 import { useErrorsStore } from "@/store/errors";
 import { useVerbsStore } from "@/store/verbs";
 
-let errorStore = useErrorsStore();
-let verbStore = useVerbsStore();
+const errorStore = useErrorsStore();
+const verbStore = useVerbsStore();
 
-function backToStart() {
+const backToStart = () => {
   errorStore.$reset();
   verbStore.$reset();
   router.replace("/");
