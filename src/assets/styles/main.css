@@ -1,0 +1,49 @@
+.router-link-active {
+  color: #1c64f2;
+}
+.router-link-exact-active {
+  color: #1c64f2;
+}
+.wraper {
+  height: 100;
+  scrollbar-width: thin;
+}
+
+.router-link-active span {
+  color: #1c64f2;
+}
+.router-link-exact-active svg {
+  color: #1c64f2;
+}
+
+.disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+:root {
+  --screen-height: 100%;
+}
+html,
+body,
+#app {
+  margin: 0;
+  padding: 0;
+}
+.page {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: var(--screen-height);
+  overflow: hidden;
+}
+header {
+  flex-shrink: 0;
+}
+.main {
+  display: flex;
+  flex: 1;
+  overflow-y: auto;
+  flex: 1;
+  padding-bottom: 64px;
+}
